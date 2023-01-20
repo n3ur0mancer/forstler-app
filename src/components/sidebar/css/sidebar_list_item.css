@@ -1,0 +1,24 @@
+.sidebar_list_item_layout{
+    display: flex;
+    align-items: center;
+}
+
+.logo_icon{
+    width: auto;
+    height: 8vh;
+}
+.logo_text{
+    margin-left: 3vw;
+    font-family: sans-serif;
+    font-weight: 800;
+}
+
+.simple_list_icon{
+    width: auto;
+    height: 4vh;
+}
+.simple_list_item{
+    margin-left: 3vw;
+    font-family: sans-serif;
+    font-weight: 400;
+}
