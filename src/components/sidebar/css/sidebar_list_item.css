@@ -4,21 +4,22 @@
 }
 
 .logo_icon{
-    width: auto;
-    height: 8vh;
+    height: 7vh;
 }
 .logo_text{
-    margin-left: 3vw;
-    font-family: sans-serif;
+    color: #14221D;
+    margin-left: 1vw;
+    font-family: 'Lexend';
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
 .simple_list_icon{
-    width: auto;
     height: 4vh;
 }
 .simple_list_item{
-    margin-left: 3vw;
-    font-family: sans-serif;
+    font-family: 'Lexend';
+    color: #14221D;
+    margin-left: 1.5vw;
     font-weight: 400;
 }

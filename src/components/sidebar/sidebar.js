@@ -8,22 +8,22 @@ function Sidebar() {
                 <Sidebar_List_Item 
                     className_icon='logo_icon'
                     className_text='logo_text'
-                    image_src={require('./assets/logo.svg')}
+                    image_src={require('./assets/logo.svg').default}
                     item_text='Forstler'/>
                 <Sidebar_List_Item 
                     className_icon='simple_list_icon'
                     className_text='simple_list_item'
-                    image_src={require('./assets/ring.svg')}
+                    image_src={require('./assets/ring.svg').default}
                     item_text='Dashboard'/>
                 <Sidebar_List_Item 
                     className_icon='simple_list_icon'
                     className_text='simple_list_item'
-                    image_src={require('./assets/ring.svg')}
+                    image_src={require('./assets/ring.svg').default}
                     item_text='Ratgeber'/>
                 <Sidebar_List_Item 
                     className_icon='simple_list_icon'
                     className_text='simple_list_item'
-                    image_src={require('./assets/ring.svg')}
+                    image_src={require('./assets/ring.svg').default}
                     item_text='Profil'/>
             </div>
     );
