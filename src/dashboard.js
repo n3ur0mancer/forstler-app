@@ -1,12 +1,25 @@
 import Sidebar from './components/sidebar/sidebar';
+import Location_module from './components/location_module/location_module';
 
 import './css/dashboard.css';
 
 
 function Dashboard() {
     return (
-            <div className='dashboard_layout'>
+            <div className='dashboard_outer_double_row_container'>
                 <Sidebar />
+                <div className='dashboard_inner_triple_column_container'>
+                    <div className='view_title'>
+                        <h2>Dashboard</h2>
+                        <p>Plänterwald, Berlin</p>
+                    </div> 
+                    <div className='dashboard_inner_triple_row_container'>
+                        <Location_module/>
+                    </div>
+                    <div className='dashboard_inner_triple_row_container'>
+
+                    </div>
+                </div>
             </div>
     );
 }
