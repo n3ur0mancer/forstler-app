@@ -20,11 +20,6 @@ function Sidebar() {
                     className_text='simple_list_item'
                     image_src={require('./assets/ring.svg').default}
                     item_text='Ratgeber'/>
-                <Sidebar_List_Item 
-                    className_icon='simple_list_icon'
-                    className_text='simple_list_item'
-                    image_src={require('./assets/ring.svg').default}
-                    item_text='Profil'/>
             </div>
     );
 }

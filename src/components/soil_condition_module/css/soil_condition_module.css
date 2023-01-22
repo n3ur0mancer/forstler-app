@@ -1,12 +1,12 @@
-.crown_condition_module_container{
+.soil_condition_module_container{
     display: flex;
     flex-direction: column;
     background-color: white;
     margin-left: 2vw;
     border-radius: 2vh;
-    width: 30vw;
+    width: 23vw;
 }
-.crown_condition_inner_container{
+.soil_condition_inner_container{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -14,7 +14,7 @@
 }
 
 
-.crown_condition_module_title{
+.soil_condition_module_title{
     font-family: 'Lexend';
     font-weight: bold;
     font-size: 1.2rem;
@@ -24,17 +24,11 @@
     margin-left: 2vw;
 }
 
-.crown_condition_module_description{
+.soil_condition_module_description{
     font-family: 'Lexend';
     font-size: 0.7rem;
     color: #8E8E8E;
-
     margin-bottom: 2vh;
-    margin-left: 2vw;
-    margin-right: 2vw;
-}
-
-.crown_condition_graph{
     margin-left: 2vw;
     margin-right: 2vw;
 }

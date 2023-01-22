@@ -1,0 +1,19 @@
+.new_location_module_container{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-left: 2vw;
+    border-radius: 2vh;
+    width: 23vw;
+}
+
+.new_location_module_title{
+    font-family: 'Lexend';
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #14221D;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vw;
+}
+

@@ -48,14 +48,14 @@ function Crown_condition_graph() {
             data={data} 
             margin={{
                 top: 5,
-                right: 20,
-                left: 20,
+                right: 30,
+                left: 30,
                 bottom: 5,
             }}
             className="crown_condition_graph_text">
             <Legend verticalAlign="top" align="left"/>
             <Tooltip />
-            <XAxis dataKey="Month" />
+            <XAxis dataKey="Month" stroke='#929292' strokeWidth="1.5"/>
             <Bar dataKey="Kronenverlichtung" fill="#355649" />
         </BarChart>
 

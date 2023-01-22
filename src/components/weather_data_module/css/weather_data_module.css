@@ -1,4 +1,4 @@
-.crown_condition_module_container{
+.weather_data_module_container{
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -6,15 +6,7 @@
     border-radius: 2vh;
     width: 30vw;
 }
-.crown_condition_inner_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-content: space-between;
-}
-
-
-.crown_condition_module_title{
+.weather_data_module_title{
     font-family: 'Lexend';
     font-weight: bold;
     font-size: 1.2rem;
@@ -23,18 +15,12 @@
     margin-bottom: 0.5vh;
     margin-left: 2vw;
 }
-
-.crown_condition_module_description{
+.weather_data_module_description{
     font-family: 'Lexend';
     font-size: 0.7rem;
     color: #8E8E8E;
-
     margin-bottom: 2vh;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
-.crown_condition_graph{
-    margin-left: 2vw;
-    margin-right: 2vw;
-}

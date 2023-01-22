@@ -1,0 +1,26 @@
+.location_search_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.search_field{
+    width: 18vw;
+    height: 3vh;
+    border: solid #8E8E8E; 
+    border-radius: 1vh;
+    border-width: 0.15em;
+    margin-left: 2vw;
+    margin-right: 1vw;
+}
+.search_field_text{
+    margin-left: 0.5vw;
+    font-family: "Lexend";
+    font-size: 0.8rem;
+    color: #8E8E8E;
+}
+.search_icon{
+    height: 4vh;
+    margin-right: 2vw;
+}
