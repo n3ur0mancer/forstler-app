@@ -1,12 +1,14 @@
 .location_module_layout{
     border-radius: 2vh;
     background-color: white;
-    width: 25vw;
+    width: 20vw;
 }
 
 .location_module_title{
     font-family: 'Lexend';
     font-weight: bold;
+    font-size: 1.2rem;
+    color: #14221D;
     background-color: white;
     margin-left: 2vw;
     margin-right: 2vw;

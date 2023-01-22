@@ -21,6 +21,7 @@ html {
     height: 12vh;
     margin-top: 5vh;
     font-family: 'Lexend';
+    color: #14221D;
 }
 
 .dashboard_inner_triple_row_container_1{
@@ -31,7 +32,7 @@ html {
 
 .dashboard_inner_triple_row_container_2{
     height: 35vh;
-    width: 25vw;
+    width: 20vw;
     background-color: black;
     margin-bottom: 3vh;
 }
