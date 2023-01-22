@@ -12,17 +12,17 @@ The Forstler app also tries to provide recommendations for tree species, which c
 
 The following technologies/ software is being used in this project:
 
-- NodeJS https://nodejs.org/en/
-- Express https://expressjs.com/
-- ReactJs https://reactjs.org/
-- Recharts https://github.com/recharts/recharts
-- Pigeon Maps https://github.com/mariusandra/pigeon-maps
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [ReactJs](https://reactjs.org/)
+- [Recharts](https://recharts.org/)
+- [Pigeon-Maps](https://pigeon-maps.js.org/)
 
 ## Getting Started
 
 Clone the repository and navigate to the directory.
 
-Install the depencies:
+Install the dependencies:
 
 ```
 npm install
