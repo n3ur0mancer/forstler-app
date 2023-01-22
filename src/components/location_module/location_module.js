@@ -1,5 +1,5 @@
-import Location_list_item from './location_list_item/location_list_item';
-import Location_search from './location_search/location_search';
+import Location_list_item from './location_list_item';
+import Location_search from './location_search';
 import './css/location_module.css';
 
 

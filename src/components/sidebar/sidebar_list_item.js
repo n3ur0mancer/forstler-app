@@ -1,4 +1,4 @@
-import '../css/sidebar_list_item.css';
+import './css/sidebar_list_item.css';
 
 function Sidebar_List_Item(props) {
     return (

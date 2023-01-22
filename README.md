@@ -22,7 +22,7 @@ The following technologies/ software is being used in this project:
 
 Clone the repository and navigate to the directory.
 
-Download the depencies:
+Install the depencies:
 
 ```
 npm install

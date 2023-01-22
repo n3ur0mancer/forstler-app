@@ -1,4 +1,4 @@
-import '../css/location_list_item.css';
+import './css/location_list_item.css';
 
 function Location_list_item(props) {
     return (

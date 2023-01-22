@@ -1,5 +1,5 @@
-import ellipse from '../assets/ellipse.svg';
-import '../css/location_search.css';
+import ellipse from './assets/ellipse.svg';
+import './css/location_search.css';
 
 
 function Location_search() {

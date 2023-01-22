@@ -1,4 +1,4 @@
-import Sidebar_List_Item from './sidebar_list_item/sidebar_list_item';
+import Sidebar_List_Item from './sidebar_list_item';
 import './css/sidebar.css';
 
 
