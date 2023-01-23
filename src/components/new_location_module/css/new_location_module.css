@@ -17,3 +17,7 @@
     margin-left: 2vw;
 }
 
+.new_location_module_coordinates_container{
+    display: flex;
+    flex-direction: row;
+}

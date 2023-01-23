@@ -3,7 +3,7 @@
     flex-direction: row;
     margin-bottom: 0.5vh;
     margin-left: 2vw;
-    margin-right: 2vw;
+ 
     font-family: 'Lexend';
     font-size: 0.8rem;
     color: #2A443A;
@@ -15,5 +15,5 @@
 }
 
 .input_field{
-    width: 15vw;
+    width: 8vw;
 }

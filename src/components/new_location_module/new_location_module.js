@@ -11,7 +11,10 @@ function New_loction_module() {
                 <h3 className='new_location_module_title'>Neuer Standort</h3>
                 <New_location_input_field input_field_name='Standort Name'/>
                 <New_location_input_field input_field_name='Ort'/>
-                <New_location_input_field input_field_name='Koordinaten'/>
+                <div className='new_location_module_coordinates_container'>
+                    <New_location_input_field input_field_name='Längengrad'/>
+                    <New_location_input_field input_field_name='Breitengrad'/>
+                </div>
                 <Checkbox />
                 <Button button_text='Bestätigen' />
             </div>

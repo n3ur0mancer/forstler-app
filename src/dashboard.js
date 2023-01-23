@@ -24,7 +24,7 @@ function Dashboard() {
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
-                            <Map_module/>
+                            <Map_module latitude="52.488" longitude="13.4672" />
                         </div>
                         <Weather_data_module/>
                         <New_location_module />

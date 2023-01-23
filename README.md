@@ -8,6 +8,8 @@ This repository is the ReactJs single page application part of Forstler. Forstle
 
 The Forstler app also tries to provide recommendations for tree species, which can be suitable for the selected location, based on the climate, lighting and soil conditions.
 
+This project is currently just a mere prototype and needs further development to be fully functional.
+
 ## Which tech stack is being used?
 
 The following technologies/ software is being used in this project:
@@ -34,4 +36,4 @@ Start the application:
 npm start
 ```
 
-Your default browser should open up automatically, if not copy and paste the following URL: localhost:3000/
+Your default browser should open up automatically, if not copy and paste the following URL: localhost:3000/home

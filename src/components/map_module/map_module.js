@@ -2,17 +2,20 @@ import React, { useState } from 'react';
 import { Map } from 'pigeon-maps';
 import { osm } from 'pigeon-maps/providers';
 
-export function Map_module() {
-  const [center, setCenter] = useState([52.488, 13.4672])
+export function Map_module(props) {
+  
+  const [center, setCenter] = useState([47.781, -12.3176])
   const [zoom, setZoom] = useState(13)
+  const latitude = props.latitude;
+  const longitude = props.longitude;
+
   return (
-    
     <Map  
       provider={osm}
       center={center} 
       zoom={zoom} 
-      onBoundsChanged={({ center, zoom }) => { 
-        setCenter(center) 
+      onBoundsChanged={({ zoom }) => { 
+        setCenter([latitude, longitude]) 
         setZoom(zoom) 
       }} 
     />
