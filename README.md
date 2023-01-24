@@ -1,6 +1,6 @@
 # Forstler – Single Page Application
 
-Repository for the app part of Forstler.
+Repository for the app part of Forstler. Please keep in mind that this is a work in progress.
 
 ## What is this project about?
 
