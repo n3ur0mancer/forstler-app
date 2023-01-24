@@ -13,6 +13,7 @@ function App() {
           <div>
               <Routes>
                   <Route path={'/dashboard'} element={<Dashboard/>}/>
+                  <Route path={'/guide'} element={<Guide/>}/>
               </Routes>
           </div>
       </BrowserRouter>
