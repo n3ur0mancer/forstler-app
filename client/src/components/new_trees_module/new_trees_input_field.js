@@ -1,4 +1,4 @@
-import './css/new_location_input_field.css';
+import './css/new_trees_input_field.css';
 
 
 function New_trees_input_field(props) {

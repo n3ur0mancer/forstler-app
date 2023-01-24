@@ -1,0 +1,19 @@
+.new_trees_input_field_container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5vh;
+    margin-left: 2vw;
+ 
+    font-family: 'Lexend';
+    font-size: 0.8rem;
+    color: #2A443A;
+}
+
+.input_field_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.input_field{
+    width: 8vw;
+}
