@@ -9,13 +9,19 @@ import './css/dashboard.css';
 
 
 function Dashboard() {
+    const location_name = "Plänterwald, Berlin";
+    const location_latitude = "52.488";
+    const location_longitude = "13.47";
+    const iot_latitude= "52.48775360216396";
+    const iot_longitude= "13.47244510990844";
+
     return (
             <div className='dashboard_outer_double_row_container'>
                 <Sidebar />
                 <div className='dashboard_inner_triple_column_container'>
                     <div className='view_title'>
                         <h2>Dashboard</h2>
-                        <p>Plänterwald, Berlin</p>
+                        <p>{location_name}</p>
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
                         <Location_module/>
@@ -24,7 +30,11 @@ function Dashboard() {
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
-                            <Map_module latitude="52.488" longitude="13.4672" />
+                            <Map_module 
+                            latitude={location_latitude} 
+                            longitude={location_longitude}  
+                            marker_latitude={iot_latitude}
+                            marker_longitude={iot_longitude}/>
                         </div>
                         <Weather_data_module/>
                         <New_location_module />
