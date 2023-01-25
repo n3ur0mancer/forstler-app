@@ -3,9 +3,9 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } fro
 import './css/soil_condition_graph.css';
 
 const data = [{
-    Sand: 3,
     Lehm: 2,
-    Kalk: 1
+    Sand: 3,
+    Schlick: 1
   }
 ];
   
@@ -26,9 +26,9 @@ function Soil_condition_graph() {
             <XAxis type="number" hide='true' />
             <YAxis type="category" dataKey='name' hide='true' />
             <Tooltip />
-            <Bar dataKey="Sand" fill="#14221D" />
             <Bar dataKey="Lehm" fill="#B2D4C8" />
-            <Bar dataKey="Kalk" fill="#929292" />
+            <Bar dataKey="Sand" fill="#14221D" />
+            <Bar dataKey="Schlick" fill="#929292" />
         </BarChart>
 
     </ResponsiveContainer>

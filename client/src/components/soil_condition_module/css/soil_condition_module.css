@@ -6,11 +6,20 @@
     border-radius: 2vh;
     width: 23vw;
 }
-.soil_condition_inner_container{
+.soil_info_container{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    align-content: space-between;
+    margin-left: 2vw;
+    margin-bottom: 1vh;
+}
+.soil_info_icon{
+    width: 1.7vw;
+    margin-right: 1vw;
+}
+.soil_info_text{
+    font-family: "Lexend";
+    font-size: 0.8rem;
+    color: #5E5E5E;
 }
 
 

@@ -15,6 +15,21 @@
     margin-bottom: 0.5vh;
     margin-left: 2vw;
 }
+.weather_info_container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+   
+}
+.weather_info_icon{
+    height: 3vh;
+    margin-right: 1vw;
+}
+.weather_info_text{
+    font-family: "Lexend";
+    font-size: 0.8rem;
+    color: #5E5E5E;
+}
 .weather_data_module_description{
     font-family: 'Lexend';
     font-size: 0.7rem;

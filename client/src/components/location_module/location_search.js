@@ -1,4 +1,4 @@
-import ellipse from './assets/ellipse.svg';
+import search_icon from './assets/search-circle_icon.svg';
 import './css/location_search.css';
 
 
@@ -8,7 +8,7 @@ function Location_search() {
                 <div className='search_field'>
                     <p className='search_field_text'>Suche...</p>
                 </div>
-                <img src={ellipse} className="search_icon"></img>
+                <img src={search_icon} className="search_icon"></img>
             </div>
     );
 }
