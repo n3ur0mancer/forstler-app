@@ -62,7 +62,7 @@ const map_fencing_sample = {
 
 
 
-export function Map_module(props) {
+export function MapModule(props) {
   
   const [center, setCenter] = useState([47.781, -12.3176])
   const [zoom, setZoom] = useState(13)
@@ -103,4 +103,4 @@ export function Map_module(props) {
   )
 }
 
-export default Map_module;
+export default MapModule;

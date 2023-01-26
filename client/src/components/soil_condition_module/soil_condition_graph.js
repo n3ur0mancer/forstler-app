@@ -9,7 +9,7 @@ const data = [{
   }
 ];
   
-function Soil_condition_graph() {
+function SoilConditionGraph() {
     return (
     <ResponsiveContainer width="100%" height="100%" >
         <BarChart 
@@ -35,4 +35,4 @@ function Soil_condition_graph() {
     );
   }
   
-  export default Soil_condition_graph;
+  export default SoilConditionGraph;

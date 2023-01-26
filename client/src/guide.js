@@ -1,10 +1,10 @@
 import Sidebar from './components/sidebar/sidebar';
-import Location_module from './components/location_module/location_module';
-import Tree_recommendation_module from './components/tree_recommendation_module/tree_recommendation_module';
-import Soil_condition_module from './components/soil_condition_module/soil_condition_module';
-import Map_module from './components/map_module/map_module';
+import LocationModule from './components/location_module/location_module';
+import TreeRecommendationModule from './components/tree_recommendation_module/tree_recommendation_module';
+import SoilConditionModule from './components/soil_condition_module/soil_condition_module';
+import MapModule from './components/map_module/map_module';
 import Weather_data_module from './components/weather_data_module/weather_data_module';
-import New_trees_module from './components/new_trees_module/new_trees_module';
+import NewTreesModule from './components/new_trees_module/new_trees_module';
 import './css/dashboard.css';
 
 
@@ -25,20 +25,20 @@ function Guide() {
                         <p>{location_name}</p>
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
-                        <Location_module/>
-                        <Tree_recommendation_module location_name={location_name}/>
-                        <Soil_condition_module />
+                        <LocationModule/>
+                        <TreeRecommendationModule location_name={location_name}/>
+                        <SoilConditionModule />
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
-                            <Map_module 
+                            <MapModule 
                             latitude={location_latitude} 
                             longitude={location_longitude} 
                             marker_latitude={iot_latitude}
                             marker_longitude={iot_longitude}/>
                         </div>
                         <Weather_data_module/>
-                        <New_trees_module />
+                        <NewTreesModule />
                     </div>
                 </div>
             </div>

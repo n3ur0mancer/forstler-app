@@ -1,8 +1,8 @@
 import Sidebar from './components/sidebar/sidebar';
-import Location_module from './components/location_module/location_module';
-import Crown_condition_module from './components/crown_condition_module/crown_condition_module';
+import LocationModule from './components/location_module/location_module';
+import CrownConditionModule from './components/crown_condition_module/crown_condition_module';
 import Soil_condition_module from './components/soil_condition_module/soil_condition_module';
-import Map_module from './components/map_module/map_module';
+import MapModule from './components/map_module/map_module';
 import Weather_data_module from './components/weather_data_module/weather_data_module';
 import New_location_module from './components/new_location_module/new_location_module';
 import './css/dashboard.css';
@@ -24,13 +24,13 @@ function Dashboard() {
                         <p>{location_name}</p>
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
-                        <Location_module/>
-                        <Crown_condition_module/>
+                        <LocationModule/>
+                        <CrownConditionModule/>
                         <Soil_condition_module />
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
-                            <Map_module 
+                            <MapModule 
                             latitude={location_latitude} 
                             longitude={location_longitude}  
                             marker_latitude={iot_latitude}

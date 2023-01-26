@@ -11,7 +11,7 @@ import climate_icon from './assets/climate-temperature_icon.svg';
 import './css/recommendation_list_item.css';
 
 
-function Recommendation_list_item(props) {
+function RecommendationListItem(props) {
     return (
             <div className='recommendation_list_item_container'>
                 <div className="tree_name_container">
@@ -34,4 +34,4 @@ function Recommendation_list_item(props) {
     );
 }
 
-export default Recommendation_list_item;
+export default RecommendationListItem;

@@ -1,6 +1,6 @@
 import './css/location_list_item.css';
 
-function Location_list_item(props) {
+function LocationListItem(props) {
     return (
             <div className='location_list_item_container'>
                 <div className='location_list_item_child'>
@@ -11,4 +11,4 @@ function Location_list_item(props) {
     );
 }
 
-export default Location_list_item;
+export default LocationListItem;

@@ -41,7 +41,7 @@ const data = [{
   }
 ];
   
-function Crown_condition_graph() {
+function CrownConditionGraph() {
     return (
     <ResponsiveContainer width="100%" height="100%" >
         <BarChart 
@@ -63,4 +63,4 @@ function Crown_condition_graph() {
     );
   }
   
-  export default Crown_condition_graph;
+  export default CrownConditionGraph;

@@ -2,7 +2,7 @@ import search_icon from './assets/search-circle_icon.svg';
 import './css/location_search.css';
 
 
-function Location_search() {
+function LocationSearch() {
     return (
             <div className='location_search_container'>
                 <div className='search_field'>
@@ -13,4 +13,4 @@ function Location_search() {
     );
 }
 
-export default Location_search;
+export default LocationSearch;

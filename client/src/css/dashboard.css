@@ -10,6 +10,7 @@ html {
 .dashboard_outer_double_row_container{
     display: flex;
     flex-direction: row;
+    margin-right: 3vw;
 }
 
 .dashboard_inner_triple_column_container{
@@ -27,14 +28,12 @@ html {
 .dashboard_inner_triple_row_container_1{
     display: flex;
     flex-direction: row;
-    height: 38vh;
     margin-bottom: 3vh;
 }
 
 .dashboard_inner_triple_row_container_2{
     display: flex;
     flex-direction: row;
-    height: 38vh;
     margin-bottom: 3vh;
 }
 .map_container{

@@ -4,7 +4,7 @@ import './button.css';
 function Button(props) {
     return (
             <div>
-                <button className='button'>{props.button_text}</button>
+                <button className={props.button_style}>{props.button_text}</button>
             </div>
     );
 }

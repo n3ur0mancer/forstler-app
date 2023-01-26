@@ -1,7 +1,7 @@
 import './css/new_location_input_field.css';
 
 
-function New_trees_input_field(props) {
+function NewLocationInputField(props) {
     return (
             <div className='new_trees_input_field_container'>
                 <form >
@@ -14,4 +14,4 @@ function New_trees_input_field(props) {
     );
 }
 
-export default New_trees_input_field;
+export default NewLocationInputField;

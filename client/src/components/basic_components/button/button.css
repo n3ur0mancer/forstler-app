@@ -1,11 +1,50 @@
-.button{
+.light_grey_button{
+    background-color: #E5E5E5;
+    color: #14221D;
+    border: none;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-family: 'Lexend';
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.3vh;
+    margin-top: 1vh;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+.light_grey_button_home{
+    background-color: #E5E5E5;
+    color: #14221D;
+    border: none;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-family: 'Lexend';
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.3vh;
+    margin-top: 1vh;
+    margin-left: 4vw;
+    margin-bottom: 3vh;
+    cursor: pointer;
+}
+
+
+.green_button{
     background-color: #355649;
     color: white;
     border: none;
     padding-top: 0.8vh;
     padding-bottom: 0.8vh;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
     font-family: 'Lexend';
     font-size: 0.7rem;
     font-weight: 100;
@@ -14,5 +53,25 @@
     border-radius: 0.3vh;
     margin-top: 1vh;
     margin-left: 2vw;
+    margin-bottom: 2vh;
+    cursor: pointer;
+}
+.green_button_home{
+    background-color: #355649;
+    color: white;
+    border: none;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-family: 'Lexend';
+    font-size: 0.7rem;
+    font-weight: 100;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.3vh;
+    margin-top: 1vh;
+    margin-left: 4vw;
+    margin-bottom: 3vh;
     cursor: pointer;
 }
