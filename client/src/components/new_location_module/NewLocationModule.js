@@ -1,6 +1,6 @@
-import NewLocationInputField from './new_location_input_field';
-import Button from '../basic_components/button/button';
-import Checkbox from '../basic_components/checkbox/checkbox';
+import NewLocationInputField from './NewLocationInputField';
+import Button from '../basic_components/button/Button';
+import Checkbox from '../basic_components/checkbox/Checkbox';
 
 import './css/new_location_module.css';
 

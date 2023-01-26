@@ -1,5 +1,5 @@
-import NewTreesInputField from './new_trees_input_field';
-import Button from '../basic_components/button/button';
+import NewTreesInputField from './NewTreesInputField';
+import Button from '../basic_components/button/Button';
 
 import './css/new_trees_module.css';
 

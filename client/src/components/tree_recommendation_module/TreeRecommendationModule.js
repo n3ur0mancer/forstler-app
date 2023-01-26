@@ -1,4 +1,4 @@
-import RecommendationListItem from './recommendation_list_item';
+import RecommendationListItem from './RecommendationListItem';
 
 import './css/tree_recommendation_module.css';
 

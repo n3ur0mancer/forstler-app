@@ -53,7 +53,7 @@ const data = [{
   }
 ];
   
-function Weather_data_graph() {
+function WeatherDataGraph() {
     return (
     <ResponsiveContainer width="100%" height="100%">
         <LineChart 
@@ -76,4 +76,4 @@ function Weather_data_graph() {
     );
   }
   
-  export default Weather_data_graph;
+  export default WeatherDataGraph;

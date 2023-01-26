@@ -1,4 +1,4 @@
-import CrownConditionGraph from './crown_condition_graph';
+import CrownConditionGraph from './CrownConditionGraph';
 
 import './css/crown_condition_module.css';
 

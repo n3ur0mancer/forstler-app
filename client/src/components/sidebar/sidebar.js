@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import logo_icon from './assets/logo.svg';
-import SidebarListItem from './sidebar_list_item';
+import SidebarListItem from './SidebarListItem';
 
 import './css/sidebar.css';
 

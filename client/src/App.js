@@ -4,9 +4,9 @@ import {
   Route
 } from 'react-router-dom';
 import "@fontsource/lexend";
-import Dashboard from './dashboard';
-import Guide from './guide';
-import Home from './home';
+import Dashboard from './views/Dashboard';
+import Guide from './views/Guide';
+import Home from './views/Home';
 
 function App() {
   return (

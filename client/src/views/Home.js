@@ -1,12 +1,12 @@
 import {Link} from 'react-router-dom';
 
-import Header from './components/header/header';
-import Button from './components/basic_components/button/button';
+import Header from '../components/header/Header';
+import Button from '../components/basic_components/button/Button';
 
-import terrain_image from './components/basic_components/assets/terrain_image.jpg';
-import soil_image from './components/basic_components/assets/soil_image.jpg';
-import forest_image from './components/basic_components/assets/forest_image_1.jpg';
-import checkmark from './components/basic_components/assets/checkmark.svg';
+import terrain_image from '../images/terrain_image.jpg';
+import soil_image from '../images/soil_image.jpg';
+import forest_image from '../images/forest_image_1.jpg';
+import checkmark from '../components/basic_components/assets/checkmark.svg';
 import './css/home.css';
 
 

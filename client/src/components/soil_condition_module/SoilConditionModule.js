@@ -1,4 +1,4 @@
-import SoilConditionGraph from './soil_condition_graph';
+import SoilConditionGraph from './SoilConditionGraph';
 import clay_sand_icon from './assets/sand-clay_icon.svg';
 
 import './css/soil_condition_module.css';

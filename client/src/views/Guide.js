@@ -1,10 +1,10 @@
-import Sidebar from './components/sidebar/sidebar';
-import LocationModule from './components/location_module/location_module';
-import TreeRecommendationModule from './components/tree_recommendation_module/tree_recommendation_module';
-import SoilConditionModule from './components/soil_condition_module/soil_condition_module';
-import MapModule from './components/map_module/map_module';
-import Weather_data_module from './components/weather_data_module/weather_data_module';
-import NewTreesModule from './components/new_trees_module/new_trees_module';
+import Sidebar from '../components/sidebar/Sidebar';
+import LocationModule from '../components/location_module/LocationModule';
+import TreeRecommendationModule from '../components/tree_recommendation_module/TreeRecommendationModule';
+import SoilConditionModule from '../components/soil_condition_module/SoilConditionModule';
+import MapModule from '../components/map_module/MapModule';
+import WeatherDataMdule from '../components/weather_data_module/WeatherDataModule';
+import NewTreesModule from '../components/new_trees_module/NewTreesModule';
 import './css/dashboard.css';
 
 
@@ -16,8 +16,8 @@ function Guide() {
     const iot_latitude= "52.48775360216396";
     const iot_longitude= "13.47244510990844";
 
-    const ring_black = require('./components/sidebar/assets/ring_black.svg').default
-    const ring_white = require('./components/sidebar/assets/ring_white.svg').default
+    const ring_black = require('../components/sidebar/assets/ring_black.svg').default
+    const ring_white = require('../components/sidebar/assets/ring_white.svg').default
 
     return (
             <div className='dashboard_outer_double_row_container'>
@@ -43,7 +43,7 @@ function Guide() {
                             marker_latitude={iot_latitude}
                             marker_longitude={iot_longitude}/>
                         </div>
-                        <Weather_data_module/>
+                        <WeatherDataMdule/>
                         <NewTreesModule />
                     </div>
                 </div>
