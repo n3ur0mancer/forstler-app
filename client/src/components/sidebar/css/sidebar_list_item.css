@@ -1,45 +1,31 @@
-.sidebar_list_item_layout{
+.sidebar_list_item{
     display: flex;
     align-items: center;
-    border-radius: 5%;
+    border-radius: 1vh;
     background: white;
-}
-
-
-.logo_icon{
-    height: 7vh;
-    margin-left: 2vw;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    background: white;
-}
-.logo_text{
     color: #14221D;
-    margin-left: 1vw;
-    margin-right: 3vw;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    font-family: 'Lexend';
-    font-size: 1.2rem;
-    font-weight: 800;
-    background: white;
+    padding: 4%;
+    margin-left: 2.5vw;
+    margin-bottom: 2vh;
 }
-
+.sidebar_list_item_selected{
+    display: flex;
+    align-items: center;
+    border-radius: 1vh;
+    background: #355649;
+    color: white;
+    padding: 4%;
+    margin-left: 2.5vw;
+    margin-bottom: 2vh;
+}
 
 .simple_list_icon{
-    height: 4vh;
-    margin-left: 3vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    background: white;
+    height: 3.5vh;
 }
-.simple_list_item{
+.simple_list_item_text{
     font-family: 'Lexend';
     font-size: 0.9rem;
-    color: #14221D;
     margin-left: 1.5vw;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
     font-weight: 400;
-    background: white;
 }
+

@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import Header from './components/header/header';
 import Button from './components/basic_components/button/button';
 
+import terrain_image from './components/basic_components/assets/terrain_image.jpg';
+import soil_image from './components/basic_components/assets/soil_image.jpg';
 import forest_image from './components/basic_components/assets/forest_image_1.jpg';
 import checkmark from './components/basic_components/assets/checkmark.svg';
 import './css/home.css';
@@ -71,11 +73,11 @@ function Home() {
                     <h3 className='fourth_segment_title'>Lernen Sie den Wald verstehen mit Hilfe der Forstler Blogs</h3>
                     <div className='blogs_container'>
                         <div className='blog_container'>
-                            <img className='blog_image' alt='blog post teaser'></img>
+                            <img src={soil_image} className='blog_image' alt='blog post teaser'></img>
                             <p className='blog_intro_text'>Bodenbeschaffenheit - Ein Schlüsselfaktor für die Gesundheit von Bäumen</p>
                         </div>
                         <div className='blog_container'>
-                            <img className='blog_image' alt='blog post teaser'></img>
+                            <img src={terrain_image} className='blog_image' alt='blog post teaser'></img>
                             <p className='blog_intro_text'>Der Standort - Welche Rolle spielt der Standort und die Lage des Waldes?</p>
                         </div>
                     </div>

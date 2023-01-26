@@ -16,9 +16,15 @@ function Guide() {
     const iot_latitude= "52.48775360216396";
     const iot_longitude= "13.47244510990844";
 
+    const ring_black = require('./components/sidebar/assets/ring_black.svg').default
+    const ring_white = require('./components/sidebar/assets/ring_white.svg').default
+
     return (
             <div className='dashboard_outer_double_row_container'>
-                <Sidebar />
+                <Sidebar ring_colour_dashboard={ring_black}
+                         list_item_style_dashboard='sidebar_list_item'
+                         ring_colour_guide={ring_white}
+                         list_item_style_guide='sidebar_list_item_selected'/>
                 <div className='dashboard_inner_triple_column_container'>
                     <div className='view_title'>
                         <h2>Ratgeber</h2>

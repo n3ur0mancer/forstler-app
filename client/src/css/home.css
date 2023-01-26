@@ -48,7 +48,7 @@
     color: white;
     background-color: #355649;
     border-radius: 3vh;
-
+    box-shadow: 0.5vw 0.9vh 4vh #8a8a8a70;
 }
 .dashboard_info_title{
     margin-top: 4vh;
@@ -76,7 +76,7 @@
     color: #5E5E5E;
     background-color: #E5E5E5;
     border-radius: 3vh;
-
+    box-shadow: 0.5vw 0.9vh 4vh #8a8a8a70;
 }
 .guide_info_title{
     margin-top: 4vh;
@@ -144,28 +144,33 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
     margin-left: 7vw;
     margin-right: 7vw;
 }
 .blog_container{
-    width: 41.5vw;
     background-color: #E5E5E5;
     border-radius: 3vh;
     margin-top: 3vh;
+    width: 40vw;
+    box-shadow: 0.5vw 0.9vh 4vh #8a8a8a70;
 }
 .blog_image{
-    height: 60vh;
+    border-radius: 3vh 3vh 0 0;
+    width: 40vw;
+    height: auto;
 }
 .blog_intro_text{
     margin-left: 2vw;
     margin-right: 2vw;
-    margin-bottom: 2vw;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
     color: #5E5E5E;
 }
 .read_more_button{
     align-self: flex-end;
     margin-right: 7vw;
-    margin-top: 2vh;
+    margin-top: 6vh;
     margin-bottom: 20vh;
     text-decoration: underline;
     cursor: pointer;
