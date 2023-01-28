@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Map, GeoJson, Marker } from 'pigeon-maps';
 import { osm } from 'pigeon-maps/providers';
+import MapOverlay from './MapOverlay';
+
+import './css/map_module.css';
 
 const map_fencing_sample = {
   "type": "FeatureCollection",
@@ -60,9 +63,7 @@ const map_fencing_sample = {
 }
 
 
-
-
-export function MapModule(props) {
+function MapModule(props) {
   
   const [center, setCenter] = useState([47.781, -12.3176])
   const [zoom, setZoom] = useState(13)
@@ -77,6 +78,8 @@ export function MapModule(props) {
       provider={osm}
       center={center} 
       zoom={zoom} 
+      attribution={false}
+      className="map-border-radius"
       onBoundsChanged={({ zoom }) => { 
         setCenter([latitude, longitude]) 
         setZoom(zoom) 
@@ -89,7 +92,7 @@ export function MapModule(props) {
           fill: "#B1D4C850",
           strokeWidth: "2.5",
           stroke: "#3F6659",
-          r: "20",
+          r: "20"
         };
       }}
     />
@@ -98,9 +101,14 @@ export function MapModule(props) {
         anchor={[marker_latitude, marker_longitude]} 
         color="#3F6659" 
       >
-      </Marker>
+    </Marker>
+    
+    <MapOverlay 
+    elevation={props.elevation}
+    sun_hours={props.sun_hours} 
+    />
     </Map>
-  )
+  );
 }
 
 export default MapModule;

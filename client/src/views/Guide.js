@@ -11,10 +11,10 @@ import './css/dashboard.css';
 function Guide() {
 
     const location_name = "Plänterwald, Berlin";
-    const location_latitude = "52.488";
-    const location_longitude = "13.47";
-    const iot_latitude= "52.48775360216396";
-    const iot_longitude= "13.47244510990844";
+    const location_latitude = 52.488;
+    const location_longitude = 13.47;
+    const iot_latitude= 52.48775360216396;
+    const iot_longitude= 13.47244510990844;
 
     const ring_black = require('../components/sidebar/assets/ring_black.svg').default
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
@@ -41,7 +41,10 @@ function Guide() {
                             latitude={location_latitude} 
                             longitude={location_longitude} 
                             marker_latitude={iot_latitude}
-                            marker_longitude={iot_longitude}/>
+                            marker_longitude={iot_longitude}
+                            elevation="50"
+                            sun_hours="5:30"
+                            />
                         </div>
                         <WeatherDataMdule/>
                         <NewTreesModule />

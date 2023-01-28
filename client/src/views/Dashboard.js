@@ -3,6 +3,7 @@ import LocationModule from '../components/location_module/LocationModule';
 import CrownConditionModule from '../components/crown_condition_module/CrownConditionModule';
 import SoilConditionModule from '../components/soil_condition_module/SoilConditionModule';
 import MapModule from '../components/map_module/MapModule';
+import MapOverlay from '../components/map_module/MapOverlay';
 import WeatherDataMdule from '../components/weather_data_module/WeatherDataModule';
 import NewLoctionModule from '../components/new_location_module/NewLocationModule';
 import './css/dashboard.css';
@@ -10,10 +11,10 @@ import './css/dashboard.css';
 
 function Dashboard() {
     const location_name = "Plänterwald, Berlin";
-    const location_latitude = "52.488";
-    const location_longitude = "13.47";
-    const iot_latitude= "52.48775360216396";
-    const iot_longitude= "13.47244510990844";
+    const location_latitude = 52.488;
+    const location_longitude = 13.47;
+    const iot_latitude= 52.48775360216396;
+    const iot_longitude= 13.47244510990844;
     
     const ring_black = require('../components/sidebar/assets/ring_black.svg').default
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
@@ -40,7 +41,10 @@ function Dashboard() {
                             latitude={location_latitude} 
                             longitude={location_longitude}  
                             marker_latitude={iot_latitude}
-                            marker_longitude={iot_longitude}/>
+                            marker_longitude={iot_longitude}
+                            elevation="50"
+                            sun_hours="5:30"
+                            />
                         </div>
                         <WeatherDataMdule/>
                         <NewLoctionModule />
