@@ -25,21 +25,43 @@ The following technologies/ software is being used in this project:
 ### Create a MySQL container in Docker
 
 1. Install Docker. The Docker Desktop application is optional, but a nice user interface tool to visualise the running containers.
-2. Pull the _docker-compose.yml file_.
-3. Compose a docker container from the _docker-compose.yml_ file in the directory where the file is located:
+2. Create a _docker-compose.yml_ file in a dedicated directory.
+3. Copy paste the following code into the newly created file:
+
+```
+version: "3.3"
+services:
+  db:
+    container_name: forstler-mysqldb
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mypassword
+      MYSQL_DATABASE: mydb
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - ./mysql-data/8.0.23:/var/lib/mysql
+    ports:
+      - 3307:3306
+    expose:
+      - 3307
+```
+
+4. Compose a docker container from the _docker-compose.yml_ file in the directory where the file is located:
 
 ```
 docker-compose -f docker-compose.yml up
 ```
 
-4. The docker container should now be up and running.
-5. You can terminate the container via the Docker Desktop application, or with the following command:
+5. The docker container should now be up and running.
+6. You can terminate the container via the Docker Desktop application, or with the following command:
 
 ```
 docker stop forstler-mysqldb
 ```
 
-6. To restart the created container, use the Docker Desktop application, or the following command:
+7. To restart the created container, use the Docker Desktop application, or the following command:
 
 ```
 docker start forstler-mysqldb
