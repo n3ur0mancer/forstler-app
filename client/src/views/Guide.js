@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/sidebar/Sidebar';
 import LocationModule from '../components/location_module/LocationModule';
 import TreeRecommendationModule from '../components/tree_recommendation_module/TreeRecommendationModule';
@@ -7,17 +8,24 @@ import WeatherDataMdule from '../components/weather_data_module/WeatherDataModul
 import NewTreesModule from '../components/new_trees_module/NewTreesModule';
 import './css/dashboard.css';
 
+const SERVER_URL = 'http://localhost:3001';
 
 function Guide() {
-
-    const location_name = "Plänterwald, Berlin";
-    const location_latitude = 52.488;
-    const location_longitude = 13.47;
-    const iot_latitude= 52.48775360216396;
-    const iot_longitude= 13.47244510990844;
-
+    const [locationName, setLocaitonName] = useState('Name');
+    const [locationCountry, setLocaitonCountry] = useState('Name');
     const ring_black = require('../components/sidebar/assets/ring_black.svg').default
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
+
+    useEffect(() => {
+        fetch(`${SERVER_URL}/dashboard/location_name/100001`)
+          .then(res => res.json())
+          .then(data => {
+            const locationName = (data.location_name);
+            setLocaitonName(locationName);
+            const locationCountry = (data.country_code);
+            setLocaitonCountry(locationCountry);
+          })
+      }, []);
 
     return (
             <div className='dashboard_outer_double_row_container'>
@@ -28,20 +36,16 @@ function Guide() {
                 <div className='dashboard_inner_triple_column_container'>
                     <div className='view_title'>
                         <h2>Ratgeber</h2>
-                        <p>{location_name}</p>
+                        <p>{[locationName]}, {[locationCountry]}</p>
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
                         <LocationModule/>
-                        <TreeRecommendationModule location_name={location_name}/>
+                        <TreeRecommendationModule location_name={[locationName]}/>
                         <SoilConditionModule />
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
                             <MapModule 
-                            latitude={location_latitude} 
-                            longitude={location_longitude} 
-                            marker_latitude={iot_latitude}
-                            marker_longitude={iot_longitude}
                             elevation="50"
                             sun_hours="5:30"
                             />

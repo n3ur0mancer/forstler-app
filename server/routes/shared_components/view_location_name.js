@@ -3,10 +3,10 @@ const router = express.Router();
 const { Locations } = require('../../models/locations'); 
 
 
-// Get a coordinates, marker postion, location fencing of a single location and its IoT module by id
+// Get a the name and country code of a single location by id
 router.get('/:id', async (req, res) => {
     try {
-        const location = await Locations.findByPk(req.params.id, { attributes: ['location_latitude', 'location_longitude','iot_latitude','iot_longitude','map_fencing'] });
+        const location = await Locations.findByPk(req.params.id, { attributes: ['location_name', 'country_code'] });
         if (location) {
           res.json(location);
       } else {

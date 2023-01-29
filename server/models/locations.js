@@ -27,6 +27,18 @@ const Locations = sequelize.define('locations', {
     type: Sequelize.DECIMAL(13, 10),
     allowNull: false,
   },
+  iot_latitude: {
+    type: Sequelize.DECIMAL(13, 10),
+    allowNull: false,
+  },
+  iot_longitude: {
+    type: Sequelize.DECIMAL(13, 10),
+    allowNull: false,
+  },
+  map_fencing: {
+    type: Sequelize.JSON,
+    allowNull: false,
+  },
   createAt: {
     type: Sequelize.DATE,
     allowNull: false,

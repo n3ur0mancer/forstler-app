@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+const viewLocationName = require('./shared_components/view_location_name');
 const locationsList = require('./shared_components/locations_list');
 // const soilCondition = require('./shared_components/soil_condition');
 const map = require('./shared_components/map');
@@ -8,6 +9,9 @@ const map = require('./shared_components/map');
 const newLocation = require('./dashboard_specific/new_location');
 // const crownCondition = require('./dashboard_specific/crown_condition');
 
+
+
+router.use('/location_name', viewLocationName);
 router.use('/locations_list', locationsList);
 router.use('/map', map);
 // router.use('/soil_condition', soilCondition);
