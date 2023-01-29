@@ -15,8 +15,10 @@ function MapModule(props) {
   const [iotLongitude, setIotLongitude] = useState(0);
   const [mapFencing, setMapFencing] = useState(0);
 
+  const location_id = props.location_id
+
   useEffect(() => {
-    fetch(`${SERVER_URL}/dashboard/map/100001`)
+    fetch(`${SERVER_URL}/dashboard/map/${location_id}`)
       .then(res => res.json())
       .then(data => {
         const locationLatitude = parseFloat(data.location_latitude);

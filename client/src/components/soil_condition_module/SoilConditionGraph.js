@@ -25,7 +25,6 @@ function SoilConditionGraph() {
             <Legend verticalAlign="top" align="left"/>
             <XAxis type="number" hide='true' />
             <YAxis type="category" dataKey='name' hide='true' />
-            <Tooltip />
             <Bar dataKey="Lehm" fill="#B2D4C8" />
             <Bar dataKey="Sand" fill="#14221D" />
             <Bar dataKey="Schlick" fill="#929292" />

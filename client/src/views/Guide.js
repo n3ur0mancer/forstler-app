@@ -9,6 +9,7 @@ import NewTreesModule from '../components/new_trees_module/NewTreesModule';
 import './css/dashboard.css';
 
 const SERVER_URL = 'http://localhost:3001';
+const location_id = 100003
 
 function Guide() {
     const [locationName, setLocaitonName] = useState('Name');
@@ -17,7 +18,7 @@ function Guide() {
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
 
     useEffect(() => {
-        fetch(`${SERVER_URL}/dashboard/location_name/100001`)
+        fetch(`${SERVER_URL}/dashboard/location_name/${location_id}`)
           .then(res => res.json())
           .then(data => {
             const locationName = (data.location_name);
@@ -46,6 +47,7 @@ function Guide() {
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
                             <MapModule 
+                            location_id={location_id}
                             elevation="50"
                             sun_hours="5:30"
                             />
