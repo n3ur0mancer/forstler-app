@@ -4,11 +4,13 @@ Repository for the app part of Forstler. Please keep in mind that this is a work
 
 ## What is this project about?
 
-This repository is the ReactJs single page application part of Forstler. Forstler is an app to monitor and visualize forest health. It uses regional data from thir party providers and compares it with the local data which is being gathered by the Forstler IoT module. The repository for this module can be found here: https://github.com/n3ur0mancer/forstler-iot
+This repository is the single page application part of Forstler. Forstler is an app to monitor and visualize forest health. It uses regional data from third party providers and compares it with the local data which is being gathered by the Forstler IoT module.
+
+The repository for this module can be found here: https://github.com/n3ur0mancer/forstler-iot
 
 The Forstler app also tries to provide recommendations for tree species, which can be suitable for the selected location, based on the climate, lighting and soil conditions.
 
-This project is currently just a mere prototype and needs further development to be fully functional.
+This project is currently just a prototype and needs further development to be fully functional.
 
 ## Which tech stack is being used?
 
