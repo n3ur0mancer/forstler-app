@@ -1,30 +1,26 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db');
 
-const RegionalSoilData = sequelize.define('RegionalSoilData', {
+const CrownConditions = sequelize.define('CrownConditions', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  clay_content: {
+  location_id: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  tree_id: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  sand_content: {
+  date_data_collection: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  defoliation_percentage: {
     type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  silt_content: {
-    type: Sequelize.INTEGER,
-    allowNull: false,
-  },
-  iot_latitude: {
-    type: Sequelize.DECIMAL(13, 10),
-    allowNull: false,
-  },
-  iot_longitude: {
-    type: Sequelize.DECIMAL(13, 10),
     allowNull: false,
   },
   timestamps: false,
@@ -34,4 +30,4 @@ const RegionalSoilData = sequelize.define('RegionalSoilData', {
   updateAt: false
 });
 
-module.exports = { RegionalSoilData }
+module.exports = { CrownConditions }

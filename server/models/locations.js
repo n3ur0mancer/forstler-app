@@ -19,6 +19,10 @@ const Locations = sequelize.define('locations', {
     type: Sequelize.STRING,
     allowNull: false,
   },
+  location_state: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
   location_latitude: {
     type: Sequelize.DECIMAL(13, 10),
     allowNull: false,
