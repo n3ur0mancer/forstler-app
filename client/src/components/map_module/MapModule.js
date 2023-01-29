@@ -18,7 +18,7 @@ function MapModule(props) {
   const location_id = props.location_id
 
   useEffect(() => {
-    fetch(`${SERVER_URL}/dashboard/map/${location_id}`)
+    fetch(`${SERVER_URL}/dashboard/map/${props.location_id}`)
       .then(res => res.json())
       .then(data => {
         const locationLatitude = parseFloat(data.location_latitude);
@@ -32,7 +32,7 @@ function MapModule(props) {
         const mapFencing = (data.map_fencing);
         setMapFencing(mapFencing);
       })
-  }, []);
+  }, [props.location_id]);
 
   return (
     <Map

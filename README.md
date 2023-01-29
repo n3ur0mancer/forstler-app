@@ -23,6 +23,7 @@ The following technologies/ software is being used in this project:
 - [MySQL](https://www.mysql.com/)
 - [ReactJs](https://reactjs.org/)
 - [Recharts](https://recharts.org/)
+- [MUI](https://mui.com/)
 - [Pigeon-Maps](https://pigeon-maps.js.org/)
 
 ## Getting Started

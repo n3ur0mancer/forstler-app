@@ -3,6 +3,7 @@
     background-color: white;
     width: 20vw;
     height: 40vh;
+    overflow-y: scroll;
 }
 
 .location_module_title{

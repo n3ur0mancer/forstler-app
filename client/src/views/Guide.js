@@ -8,25 +8,28 @@ import WeatherDataMdule from '../components/weather_data_module/WeatherDataModul
 import NewTreesModule from '../components/new_trees_module/NewTreesModule';
 import './css/dashboard.css';
 
-const SERVER_URL = 'http://localhost:3001';
-const location_id = 100003
-
 function Guide() {
+    const SERVER_URL = 'http://localhost:3001';
     const [locationName, setLocaitonName] = useState('Name');
-    const [locationCountry, setLocaitonCountry] = useState('Name');
+    const [locationCountry, setLocationCountry] = useState('Name');
     const ring_black = require('../components/sidebar/assets/ring_black.svg').default
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
+    const [selectedLocationId, setSelectedLocationId] = useState(100001);
 
     useEffect(() => {
-        fetch(`${SERVER_URL}/dashboard/location_name/${location_id}`)
+        fetch(`${SERVER_URL}/dashboard/location_name/${selectedLocationId}`)
           .then(res => res.json())
           .then(data => {
             const locationName = (data.location_name);
             setLocaitonName(locationName);
             const locationCountry = (data.country_code);
-            setLocaitonCountry(locationCountry);
+            setLocationCountry(locationCountry);
           })
-      }, []);
+      }, [selectedLocationId]);
+
+    const handleSelectLocation = (id) => {
+        setSelectedLocationId(id);
+    }
 
     return (
             <div className='dashboard_outer_double_row_container'>
@@ -40,14 +43,14 @@ function Guide() {
                         <p>{[locationName]}, {[locationCountry]}</p>
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
-                        <LocationModule/>
+                        <LocationModule onSelect={handleSelectLocation} location_id={selectedLocationId}/>
                         <TreeRecommendationModule location_name={[locationName]}/>
                         <SoilConditionModule />
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>
                         <div className='map_container'>
                             <MapModule 
-                            location_id={location_id}
+                            location_id={selectedLocationId}
                             elevation="50"
                             sun_hours="5:30"
                             />
