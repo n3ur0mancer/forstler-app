@@ -16,6 +16,9 @@ The following technologies/ software is being used in this project:
 
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- [Docker](https://www.docker.com/)
+- [MySQL](https://www.mysql.com/)
 - [ReactJs](https://reactjs.org/)
 - [Recharts](https://recharts.org/)
 - [Pigeon-Maps](https://pigeon-maps.js.org/)
