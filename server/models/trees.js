@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db');
 
-const Trees = sequelize.define('Trees', {
+const Trees = sequelize.define('trees', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,

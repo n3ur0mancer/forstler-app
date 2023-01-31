@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db');
 
-const RegionalSoilData = sequelize.define('RegionalSoilData', {
+const RegionalSoilData = sequelize.define('regional_soil_data', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,

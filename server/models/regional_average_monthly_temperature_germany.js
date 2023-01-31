@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db');
 
-const RegionalAverageMonthlyTemperatureGermany = sequelize.define('RegionalAverageMonthlyTemperatureGermany', {
+const RegionalAverageMonthlyTemperatureGermany = sequelize.define('regional_average_monthly_temperature_germany', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,

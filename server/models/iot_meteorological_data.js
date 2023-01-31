@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../config/db');
 
-const IotMeteorologicalData = sequelize.define('IotMeteorologicalData', {
+const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  location_id: {
+  location_code: {
     type: Sequelize.STRING,
     allowNull: false,
   },

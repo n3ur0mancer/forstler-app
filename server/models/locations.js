@@ -7,7 +7,7 @@ const Locations = sequelize.define('locations', {
     primaryKey: true,
     autoIncrement: true,
   },
-  location_id: {
+  location_code: {
     type: Sequelize.STRING,
     allowNull: false,
   },

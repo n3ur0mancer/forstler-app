@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const viewLocationName = require('./shared_components/view_location_name');
-const locationsList = require('./shared_components/locations_list');
-// const soilCondition = require('./shared_components/soil_condition');
-const map = require('./shared_components/map');
-// const weatherData = require('./shared_components/weather_data');
-// const newTree = require('../guide_specific/new_tree');
-// const treeRecommendationList = require('../guide_specific/tree_recommendation_list');
+const viewLocationName = require('./shared_components/view_location_name_route');
+const locationsList = require('./shared_components/locations_list_route');
+// const soilCondition = require('./shared_components/soil_condition_route');
+const map = require('./shared_components/map_route');
+// const weatherData = require('./shared_components/weather_data_route');
+// const newTree = require('../guide_specific/new_tree_route');
+// const treeRecommendationList = require('../guide_specific/tree_recommendation_list_route');
 
 
 router.use('/location_name', viewLocationName);
