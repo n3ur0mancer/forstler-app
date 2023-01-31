@@ -1,48 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BarChart, Bar, XAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import './css/crown_condition_graph.css';
 
-const data = [{
-    Month: 'Jan',
-    Kronenverlichtung: 30
-  }, {
-    Month: 'Feb',
-    Kronenverlichtung: 32
-  }, {
-    Month: 'Mar',
-    Kronenverlichtung: 32
-  }, {
-    Month: 'Apr',
-    Kronenverlichtung: 31
-  }, {
-    Month: 'May',
-    Kronenverlichtung: 35
-  }, {
-    Month: 'Jun',
-    Kronenverlichtung: 36
-  }, {
-    Month: 'Jul',
-    Kronenverlichtung: 34
-  }, {
-    Month: 'Aug',
-    Kronenverlichtung: 36
-  }, {
-    Month: 'Sep',
-    Kronenverlichtung: 35
-  }, {
-    Month: 'Oct',
-    Kronenverlichtung: 37
-  }, {
-    Month: 'Nov',
-    Kronenverlichtung: 36
-  }, {
-    Month: 'Dec',
-    Kronenverlichtung: 36
-  }
-];
   
-function CrownConditionGraph() {
-    return (
+function CrownConditionGraph(props) {
+
+  const location_id = props.location_id;
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+      fetch(`http://localhost:3001/dashboard/crown_condition/${location_id}`)
+          .then(res => res.json())
+          .then(res => {
+              setData(res.data);
+          })
+          .catch(error => {
+              console.error(error);
+          });
+  }, [location_id]);
+
+  console.log(data)
+
+  return (
     <ResponsiveContainer width="100%" height="100%" >
         <BarChart 
             data={data} 
@@ -55,8 +34,8 @@ function CrownConditionGraph() {
             className="crown_condition_graph_text">
             <Legend verticalAlign="top" align="left"/>
             <Tooltip />
-            <XAxis dataKey="Month" stroke='#929292' strokeWidth="1.5"/>
-            <Bar dataKey="Kronenverlichtung" fill="#355649" />
+            <XAxis dataKey="year" stroke='#929292' strokeWidth="1.5"/>
+            <Bar dataKey="defoliation_percentage_avg" name="Kronenverlichtung" fill="#355649" />
         </BarChart>
 
     </ResponsiveContainer>

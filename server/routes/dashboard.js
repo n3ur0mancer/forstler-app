@@ -16,6 +16,6 @@ router.use('/map', map);
 // router.use('/soil_condition', soilCondition);
 // router.use('/weather_data', weatherData);
 router.use('/new_location', newLocation);
-router.use('/crown_conditon', crownCondition);
+router.use('/crown_condition', crownCondition);
 
 module.exports = router;

@@ -12,15 +12,27 @@ exports.getDefoliationData = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-
     const data = await CrownConditions.findAll({
+      attributes: [
+        // Calculate and assign the average of the crown defoliation value
+        [sequelize.fn('AVG', sequelize.col('defoliation_percentage')), 'defoliation_percentage_avg'],
+        // Assigns to year
+        [sequelize.fn('YEAR', sequelize.col('date_data_collection')), 'year'],
+      ],
       where: {
+        // Filters by the corresponding location_code
         location_code: location.location_code,
-        date_data_collection: { [Op.between]: [moment("2018-08-01").toDate(), moment("2018-08-01").subtract(1, 'years').toDate()] },
-      }
+        // Filters by the time period
+        date_data_collection: {
+          [Op.between]: [moment("2017-08-01").subtract(12, 'years').toDate(), moment("2017-08-01").toDate()]
+        },
+      },
+      // Groups data based on year
+      group: ['year'],
     });
 
     res.status(200).json({ data });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'An error occurred' });

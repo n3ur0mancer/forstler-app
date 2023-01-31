@@ -1,6 +1,5 @@
 const { Locations } = require('../models/locations'); 
 
-
 // Get a coordinates, marker postion, location fencing of a single location and its IoT module by id
 exports.getLocationById = async (req, res) => {
   try {
@@ -14,4 +13,3 @@ exports.getLocationById = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-

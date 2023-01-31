@@ -1,17 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { Locations } = require('../../models/locations'); 
+const NewLocationController = require('../../controllers/new_location_controller');
 
 
-// Create new location
-router.post('/add', async (req, res) => {
-  try {
-    const location = await Locations.create(req.body);
-    res.status(201).json(location);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
+// Route to create new location
+router.post('/', NewLocationController.createNewLocation);
 
 module.exports = router;
