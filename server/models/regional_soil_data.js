@@ -19,19 +19,24 @@ const RegionalSoilData = sequelize.define('regional_soil_data', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  iot_latitude: {
+  latitude: {
     type: Sequelize.DECIMAL(13, 10),
     allowNull: false,
   },
-  iot_longitude: {
+  longitude: {
     type: Sequelize.DECIMAL(13, 10),
+    allowNull: false,
+  },
+  createAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  updateAt: {
+    type: Sequelize.DATE,
     allowNull: false,
   },
   timestamps: false,
   createdAt: false,
-  updateddAt: false,
-  createAt: false,
-  updateAt: false
 });
 
 module.exports = { RegionalSoilData }

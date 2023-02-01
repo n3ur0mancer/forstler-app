@@ -13,12 +13,12 @@
     margin-bottom: 1vh;
 }
 .soil_info_icon{
-    width: 1.7vw;
-    margin-right: 1vw;
+    width: 1.5vw;
+    margin-right: 0.5vw;
 }
 .soil_info_text{
     font-family: "Lexend";
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     color: #5E5E5E;
 }
 

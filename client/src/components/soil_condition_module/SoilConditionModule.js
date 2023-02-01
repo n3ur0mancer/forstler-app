@@ -4,7 +4,8 @@ import clay_sand_icon from './assets/sand-clay_icon.svg';
 import './css/soil_condition_module.css';
 
 
-function SoilConditionModule() {
+
+function SoilConditionModule(props) {
     return (
             <div className='soil_condition_module_container'>
                     <h3 className='soil_condition_module_title'>Bodendaten</h3>
@@ -12,8 +13,8 @@ function SoilConditionModule() {
                         <img src={clay_sand_icon} className="soil_info_icon"></img>
                         <p className="soil_info_text">Sandig-lehmiger Boden</p>
                     </div>
-                    <SoilConditionGraph className="soil_condition_graph"/>
-                <p className='soil_condition_module_description'>Größtenteils sandiger Boden mit mittelmäßigem Anteil an runden und eckigen Steinen.</p>
+                    <SoilConditionGraph className="soil_condition_graph" location_id={props.parent_location_id}/>
+                <p className='soil_condition_module_description'>Bodenbeschaffenheit des ausgwählten Standorts.</p>
             </div>
     );
 }

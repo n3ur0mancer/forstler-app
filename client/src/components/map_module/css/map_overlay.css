@@ -8,7 +8,7 @@
     color: #5E5E5E;
     margin-right: 1vw;
     margin-top: 2vh;
-    margin-left: 11.5vw;
+    margin-left: 12.5vw;
     z-index: 10;
     position: relative;
 }
@@ -21,7 +21,7 @@
 }
 .elevation_image{
     width: 1.5vw;
-    margin-right: 1.2vw;
+    margin-right: 0.7vw;
 }
 .elevation_text{
     font-size: 0.8rem;

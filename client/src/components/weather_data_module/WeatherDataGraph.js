@@ -4,7 +4,6 @@ import './css/weather_data_graph.css';
 
 const SERVER_URL = 'http://localhost:3001';
 
-  
 function WeatherDataGraph(props) {
 
     const location_id = props.location_id;

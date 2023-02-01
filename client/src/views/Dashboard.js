@@ -45,7 +45,7 @@ function Dashboard() {
                 <div className='dashboard_inner_triple_row_container_1'>
                     <LocationModule onSelect={handleSelectLocation} location_id={selectedLocationId} />
                     <CrownConditionModule parent_location_id={selectedLocationId} />
-                    <SoilConditionModule />
+                    <SoilConditionModule parent_location_id={selectedLocationId}/>
                 </div>
                 <div className='dashboard_inner_triple_row_container_2'>
                     <div className='map_container'>
