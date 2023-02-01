@@ -9,13 +9,23 @@ const map = require('./shared_components/map_route');
 const newLocation = require('./dashboard_specific/new_location_route');
 const crownCondition = require('./dashboard_specific/crown_condition_route');
 
+const IotTemperatureData = require('./shared_components/iot_temperature_data_route')
+const temperatureData = require('./shared_components/temperature_data_route');
+const precipitationData = require('./shared_components/precipitation_data_route');
+const sunhoursData = require('./shared_components/sunhours_data_route');
+
 
 router.use('/location_name', viewLocationName);
 router.use('/locations_list', locationsList);
 router.use('/map', map);
 // router.use('/soil_condition', soilCondition);
-// router.use('/weather_data', weatherData);
 router.use('/new_location', newLocation);
 router.use('/crown_condition', crownCondition);
+
+router.use('/iot_temperature', IotTemperatureData);
+router.use('/temperature', temperatureData);
+router.use('/precipitation', precipitationData);
+router.use('/sunhours', sunhoursData);
+
 
 module.exports = router;

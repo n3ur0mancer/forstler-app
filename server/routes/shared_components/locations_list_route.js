@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Locations } = require('../../models/locations'); 
+
 const LocationsListController = require('../../controllers/locations_list_controller');
 
 // Route to get all locations

@@ -14,7 +14,7 @@ function Guide() {
     const [locationCountry, setLocationCountry] = useState('Name');
     const ring_black = require('../components/sidebar/assets/ring_black.svg').default
     const ring_white = require('../components/sidebar/assets/ring_white.svg').default
-    const [selectedLocationId, setSelectedLocationId] = useState(100001);
+    const [selectedLocationId, setSelectedLocationId] = useState(100003);
 
     useEffect(() => {
         fetch(`${SERVER_URL}/dashboard/location_name/${selectedLocationId}`)
@@ -52,10 +52,9 @@ function Guide() {
                             <MapModule 
                             location_id={selectedLocationId}
                             elevation="50"
-                            sun_hours="5:30"
                             />
                         </div>
-                        <WeatherDataMdule/>
+                        <WeatherDataMdule parent_location_id={selectedLocationId}/>
                         <NewTreesModule />
                     </div>
                 </div>

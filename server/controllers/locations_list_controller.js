@@ -1,5 +1,8 @@
 const { Locations } = require('../models/locations'); 
 
+
+// Controller for the location data of all the locations
+
 exports.getAllLocations = async (req, res) => {
     try {
       const locations = await Locations.findAll();
@@ -8,6 +11,8 @@ exports.getAllLocations = async (req, res) => {
       res.status(500).json({ message: err.message });
     }
 };
+
+// Controller for the location data by location id
 
 exports.getLocationById = async (req, res) => {
     try {

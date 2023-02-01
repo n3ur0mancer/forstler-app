@@ -4,7 +4,7 @@ import './css/crown_condition_graph.css';
 
   
 function CrownConditionGraph(props) {
-
+    
   const location_id = props.location_id;
   const [data, setData] = useState([]);
 
@@ -19,8 +19,6 @@ function CrownConditionGraph(props) {
           });
   }, [location_id]);
 
-  console.log(data)
-
   return (
     <ResponsiveContainer width="100%" height="100%" >
         <BarChart 
@@ -33,7 +31,7 @@ function CrownConditionGraph(props) {
             }}
             className="crown_condition_graph_text">
             <Legend verticalAlign="top" align="left"/>
-            <Tooltip />
+            <Tooltip formatter={(value) => Math.round(value * 10) / 10 + " %"}/>
             <XAxis dataKey="year" stroke='#929292' strokeWidth="1.5"/>
             <Bar dataKey="defoliation_percentage_avg" name="Kronenverlichtung" fill="#355649" />
         </BarChart>

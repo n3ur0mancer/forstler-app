@@ -10,6 +10,10 @@ const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
   location_code: {
     type: Sequelize.STRING,
     allowNull: false,
+    references: {
+      model: 'locations',
+      key: 'location_code',
+    },
   },
   measurement_type: {
     type: Sequelize.STRING,
@@ -31,11 +35,16 @@ const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
     type: Sequelize.FLOAT,
     allowNull: false,
   },
+  createAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  updateAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
   timestamps: false,
   createdAt: false,
-  updateddAt: false,
-  createAt: false,
-  updateAt: false
 });
 
 module.exports = { IotMeteorologicalData }

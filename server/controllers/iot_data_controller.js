@@ -1,13 +1,13 @@
 const { Op } = require('sequelize');
 const sequelize = require('sequelize');
 const moment = require('moment');
-const {CrownConditions} = require('../models/crown_conditions');
+const {IotMeteorologicalData} = require('../models/iot_meteorological_data');
 const {Locations} = require('../models/locations');
 
 
 // Controller for the crown codition (defoliation) data
 
-exports.getDefoliationData = async (req, res) => {
+exports.getTemperatureData = async (req, res) => {
   const locationId = req.params.id;
 
   try {
@@ -15,18 +15,19 @@ exports.getDefoliationData = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const data = await CrownConditions.findAll({
+    const data = await IotMeteorologicalData.findAll({
       attributes: [
         // Calculate and assign the average of the crown defoliation value
-        [sequelize.fn('AVG', sequelize.col('defoliation_percentage')), 'defoliation_percentage_avg'],
+        [sequelize.fn('AVG', sequelize.col('daily_mean')), 'iot_temperature_avg'],
         // Assigns to year
-        [sequelize.fn('YEAR', sequelize.col('date_data_collection')), 'year'],
+        [sequelize.fn('YEAR', sequelize.col('date_observation')), 'year'],
       ],
       where: {
         // Filters by the corresponding location_code
         location_code: location.location_code,
+        measurement_type: 'air_temperature_celsius',
         // Filters by the time period
-        date_data_collection: {
+        date_observation: {
           [Op.between]: [moment("2016-01-01").subtract(12, 'years').toDate(), moment("2016-12-01").toDate()]
         },
       },

@@ -1,7 +1,8 @@
 const { Locations } = require('../models/locations'); 
 
 
-// Create new location
+// Controller to create a new location
+
 exports.createNewLocation = async (req, res) => {
     try {
       const location = await Locations.create(req.body);
