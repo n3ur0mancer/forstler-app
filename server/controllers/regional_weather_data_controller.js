@@ -7,9 +7,8 @@ const {RegionalAverageMonthlyPrecipitationGermany} = require('../models/regional
 const {RegionalAverageMonthlySunhoursGermany} = require('../models/regional_average_monthly_sunhours_germany');
 
 
-// Controller for the temperature data
-
-exports.getTemperatureData = async (req, res) => {
+// Controller for the temperature data (yearly)
+exports.getTemperatureDataYearly = async (req, res) => {
   const locationId = req.params.id;
 
   try {
@@ -44,9 +43,8 @@ exports.getTemperatureData = async (req, res) => {
   }
 };
 
-// Controller for the sunhours data
-
-exports.getSunhoursData = async (req, res) => {
+// Controller for the sunhours data (yearly)
+exports.getSunhoursDataYearly = async (req, res) => {
     const locationId = req.params.id;
   
     try {
@@ -81,9 +79,8 @@ exports.getSunhoursData = async (req, res) => {
     }
 };
 
-// Controller for the sunhours data of last, passed year
-
-exports.getSingleSunhoursData = async (req, res) => {
+// Controller for the sunhours data of last, passed year (yearly)
+exports.getSingleSunhoursDataYearly = async (req, res) => {
     const locationId = req.params.id;
   
     try {
@@ -118,9 +115,8 @@ exports.getSingleSunhoursData = async (req, res) => {
     }
 };
 
-// Controller for the precipitation data
-
-exports.getPrecipitationData = async (req, res) => {
+// Controller for the precipitation data (yearly)
+exports.getPrecipitationDataYearly = async (req, res) => {
     const locationId = req.params.id;
   
     try {

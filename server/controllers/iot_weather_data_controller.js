@@ -5,9 +5,9 @@ const {IotMeteorologicalData} = require('../models/iot_meteorological_data');
 const {Locations} = require('../models/locations');
 
 
-// Controller for the crown codition (defoliation) data
+// Controller for the crown codition/ defoliation data (yearly)
 
-exports.getTemperatureData = async (req, res) => {
+exports.getTemperatureDataYearly = async (req, res) => {
   const locationId = req.params.id;
 
   try {

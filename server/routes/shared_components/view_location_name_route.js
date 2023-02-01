@@ -4,7 +4,7 @@ const { Locations } = require('../../models/locations');
 
 
 // Get a the name and country code of a single location by id
-router.get('/:id', async (req, res) => {
+router.get('/location_name/:id', async (req, res) => {
     try {
         const location = await Locations.findByPk(req.params.id, { attributes: ['location_name', 'country_code'] });
         if (location) {

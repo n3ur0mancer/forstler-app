@@ -31,7 +31,7 @@ function MapModule(props) {
         const mapFencing = (data.map_fencing);
         setMapFencing(mapFencing);
       })
-      fetch(`${SERVER_URL}/dashboard/sunhours/single/${props.location_id}`)
+      fetch(`${SERVER_URL}/dashboard/regional_sunhours/single/${props.location_id}`)
       .then(res => res.json())
       .then(data => {
         const sunhoursDaily = Math.round((data.data[0].sunhours_avg * 12) / 365 * 10) / 10;

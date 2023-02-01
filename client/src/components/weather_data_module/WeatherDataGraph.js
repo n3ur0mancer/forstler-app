@@ -13,7 +13,7 @@ function WeatherDataGraph(props) {
     const [iotData, setIotData] = useState([]);
 
     useEffect(() => {
-      fetch(`${SERVER_URL}/dashboard/temperature/${location_id}`)
+      fetch(`${SERVER_URL}/dashboard/regional_temperature/${location_id}`)
           .then(res => res.json())
           .then(res => {
             setRegionalData(res.data);

@@ -5,9 +5,8 @@ const {CrownConditions} = require('../models/crown_conditions');
 const {Locations} = require('../models/locations');
 
 
-// Controller for the crown codition (defoliation) data
-
-exports.getDefoliationData = async (req, res) => {
+// Controller for the crown codition/ defoliation data (yearly)
+exports.getDefoliationDataYearly = async (req, res) => {
   const locationId = req.params.id;
 
   try {
