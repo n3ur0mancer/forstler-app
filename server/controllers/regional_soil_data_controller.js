@@ -41,16 +41,9 @@ exports.getSoilData = async (req, res) => {
     res.status(200).json({
       data: [
         {
-          "name": "silt",
-          "siltContent": siltContent
-        },
-        {
-          "name": "sand",
-          "sandContent": sandContent
-        },
-        {
-          "name": "clay",
-          "clayContent": clayContent
+          "clay": clayContent,
+          "sand": sandContent,
+          "silt": siltContent
         }
       ]
     });

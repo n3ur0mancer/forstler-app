@@ -37,9 +37,9 @@ function SoilConditionGraph(props) {
             <Legend verticalAlign="top" align="left"/>
             <XAxis type="number" hide='true' />
             <YAxis type="category" hide='true' dataKey='name' />
-            <Bar name="Schlick" dataKey="siltContent" fill="#B2D4C8" />
-            <Bar name="Lehm" dataKey="clayContent" fill="#14221D" />
-            <Bar name="Sand" dataKey="sandContent" fill="#929292" />
+            <Bar name="Lehm" dataKey="clay" fill="#14221D" />
+            <Bar name="Sand" dataKey="sand" fill="#929292" />
+            <Bar name="Schlick" dataKey="silt" fill="#B2D4C8" />
         </BarChart>
     </ResponsiveContainer>
     );
