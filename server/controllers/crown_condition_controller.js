@@ -26,7 +26,7 @@ exports.getDefoliationDataYearly = async (req, res) => {
         location_code: location.location_code,
         // Filters by the time period
         date_data_collection: {
-          [Op.between]: [moment("2016-01-01").subtract(12, 'years').toDate(), moment("2016-12-01").toDate()]
+          [Op.between]: [moment("2016-01-01").subtract(10, 'years').toDate(), moment("2016-12-01").toDate()]
         },
       },
       // Groups data based on year

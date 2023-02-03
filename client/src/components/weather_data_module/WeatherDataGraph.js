@@ -15,7 +15,7 @@ function WeatherDataGraph(props) {
       fetch(`${SERVER_URL}/dashboard/regional_temperature/${location_id}`)
           .then(res => res.json())
           .then(res => {
-            setRegionalData(res.data);
+            setRegionalData(res.regionalTemperatureYearly);
           })
           .catch(error => {
               console.error(error);
@@ -23,7 +23,7 @@ function WeatherDataGraph(props) {
       fetch(`${SERVER_URL}/dashboard/iot_temperature/${location_id}`)
           .then(res => res.json())
           .then(res => {
-            setIotData(res.data);
+            setIotData(res.iotYearlyTemperature);
           })
           .catch(error => {
               console.error(error);

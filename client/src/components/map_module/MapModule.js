@@ -14,7 +14,7 @@ function MapModule(props) {
   const [iotLatitude, setIotLatitude] = useState(0);
   const [iotLongitude, setIotLongitude] = useState(0);
   const [mapFencing, setMapFencing] = useState(0);
-  const [sunhoursDaily, setSunhoursDaily] = useState(0);
+  const [sunhours, setSunhoursDaily] = useState(0);
 
   useEffect(() => {
     fetch(`${SERVER_URL}/dashboard/map/${props.location_id}`)
@@ -31,11 +31,10 @@ function MapModule(props) {
         const mapFencing = (data.map_fencing);
         setMapFencing(mapFencing);
       })
-      fetch(`${SERVER_URL}/dashboard/regional_sunhours/single/${props.location_id}`)
+      fetch(`${SERVER_URL}/dashboard/regional_sunhours_single/${props.location_id}`)
       .then(res => res.json())
       .then(data => {
-        const sunhoursDaily = Math.round((data.data[0].sunhours_avg * 12) / 365 * 10) / 10;
-        setSunhoursDaily(sunhoursDaily);
+        setSunhoursDaily(data.sunhours);
       })
   }, [props.location_id]);
 
@@ -70,7 +69,7 @@ function MapModule(props) {
     </Marker>
     <MapOverlay 
     elevation={props.elevation}
-    sunhours={sunhoursDaily} 
+    sunhours={sunhours} 
     />
     </Map>
   );

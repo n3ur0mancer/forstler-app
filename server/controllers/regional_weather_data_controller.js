@@ -16,7 +16,7 @@ exports.getTemperatureDataYearly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const data = await RegionalAverageMonthlyTemperatureGermany.findAll({
+    const regionalTemperatureYearly = await RegionalAverageMonthlyTemperatureGermany.findAll({
       attributes: [
         // Calculate and assign the average of the temperature values
         [sequelize.fn('AVG', sequelize.col('temperature_celsius')), 'temperature_celsius_avg'],
@@ -28,20 +28,55 @@ exports.getTemperatureDataYearly = async (req, res) => {
         state: location.location_state,
         // Filters by the time period
         date: {
-          [Op.between]: [moment("2016-01-01").subtract(12, 'years').toDate(), moment("2016-12-01").toDate()]
+          [Op.between]: [moment("2016-01-01").subtract(10, 'years').toDate(), moment("2016-12-01").toDate()]
         },
       },
       // Groups data based on year
       group: ['year'],
     });
 
-    res.status(200).json({ data });
+    res.status(200).json({ regionalTemperatureYearly });
 
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
+
+// Controller for the temperature data (monthly)
+exports.getTemperatureDataMonthly = async (req, res) => {
+  const locationId = req.params.id;
+
+  try {
+    const location = await Locations.findByPk(locationId);
+    if (!location) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+    const regionalTemperatureMonthly = await RegionalAverageMonthlyTemperatureGermany.findAll({
+      attributes: [
+        [sequelize.fn('AVG', sequelize.col('temperature_celsius')), 'temperature_celsius_avg'],
+        [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
+      ],
+      where: {
+        state: location.location_state,
+        date: {
+          [Op.between]: [moment("2016-01-01").toDate(), moment("2017-01-01").toDate()]
+        },
+      },
+      group: ['month'],
+      order: [['month', 'ASC']],
+    });
+
+    res.status(200).json({ regionalTemperatureMonthly });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+
+
 
 // Controller for the sunhours data (yearly)
 exports.getSunhoursDataYearly = async (req, res) => {
@@ -52,26 +87,21 @@ exports.getSunhoursDataYearly = async (req, res) => {
       if (!location) {
         return res.status(404).json({ message: 'Location not found' });
       }
-      const data = await RegionalAverageMonthlySunhoursGermany.findAll({
+      const regionalSunhoursYearly = await RegionalAverageMonthlySunhoursGermany.findAll({
         attributes: [
-          // Calculate and assign the average of the sunhour values
           [sequelize.fn('AVG', sequelize.col('sunhours')), 'sunhours_avg'],
-          // Assigns to year
           [sequelize.fn('YEAR', sequelize.col('date')), 'year'],
         ],
         where: {
-          // Filters by the corresponding location_code
           state: location.location_state,
-          // Filters by the time period
           date: {
-            [Op.between]: [moment("2016-01-01").subtract(12, 'years').toDate(), moment("2016-12-01").toDate()]
+            [Op.between]: [moment("2016-01-01").subtract(10, 'years').toDate(), moment("2016-12-01").toDate()]
           },
         },
-        // Groups data based on year
         group: ['year'],
       });
   
-      res.status(200).json({ data });
+      res.status(200).json({ regionalSunhoursYearly });
   
     } catch (error) {
       console.error(error);
@@ -79,7 +109,39 @@ exports.getSunhoursDataYearly = async (req, res) => {
     }
 };
 
-// Controller for the sunhours data of last, passed year (yearly)
+// Controller for the sunhours data (monthly)
+exports.getSunhoursDataMonthly = async (req, res) => {
+  const locationId = req.params.id;
+
+  try {
+    const location = await Locations.findByPk(locationId);
+    if (!location) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+    const regionalSunhoursMonthly = await RegionalAverageMonthlySunhoursGermany.findAll({
+      attributes: [
+        [sequelize.fn('AVG', sequelize.col('sunhours')), 'sunhours_avg'],
+        [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
+      ],
+      where: {
+        state: location.location_state,
+        date: {
+          [Op.between]: [moment("2016-01-01").toDate(), moment("2017-01-01").toDate()]
+        },
+      },
+      group: ['month'],
+      order: [['month', 'ASC']],
+    });
+
+    res.status(200).json({ regionalSunhoursMonthly });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
+};
+
+// Controller for the sunhours data (last year)
 exports.getSingleSunhoursDataYearly = async (req, res) => {
     const locationId = req.params.id;
   
@@ -90,30 +152,31 @@ exports.getSingleSunhoursDataYearly = async (req, res) => {
       }
       const data = await RegionalAverageMonthlySunhoursGermany.findAll({
         attributes: [
-          // Calculate and assign the average of the sunhour values
           [sequelize.fn('AVG', sequelize.col('sunhours')), 'sunhours_avg'],
-          // Assigns to year
           [sequelize.fn('YEAR', sequelize.col('date')), 'year'],
         ],
         where: {
-          // Filters by the corresponding location_code
           state: location.location_state,
-          // Filters by the time period
           date: {
             [Op.between]: [moment("2016-01-01").toDate(), moment("2016-12-01").toDate()]
           },
         },
-        // Groups data based on year
         group: ['year'],
       });
-  
-      res.status(200).json({ data });
+      
+      const sunhours = Math.round((data[0].dataValues.sunhours_avg * 12) / 365 * 10) / 10;
+
+      res.status(200).json({ sunhours });
   
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'An error occurred' });
     }
 };
+
+
+
+
 
 // Controller for the precipitation data (yearly)
 exports.getPrecipitationDataYearly = async (req, res) => {
@@ -124,29 +187,56 @@ exports.getPrecipitationDataYearly = async (req, res) => {
       if (!location) {
         return res.status(404).json({ message: 'Location not found' });
       }
-      const data = await RegionalAverageMonthlyPrecipitationGermany.findAll({
+      const regionalPrecipitationYearly = await RegionalAverageMonthlyPrecipitationGermany.findAll({
         attributes: [
-          // Calculate and assign the average of the precipitation values
           [sequelize.fn('AVG', sequelize.col('precipitation_mm')), 'precipitation_mm_avg'],
-          // Assigns to year
           [sequelize.fn('YEAR', sequelize.col('date')), 'year'],
         ],
         where: {
-          // Filters by the corresponding location_code
           state: location.location_state,
-          // Filters by the time period
           date: {
-            [Op.between]: [moment("2016-01-01").subtract(12, 'years').toDate(), moment("2016-12-01").toDate()]
+            [Op.between]: [moment("2016-01-01").subtract(10, 'years').toDate(), moment("2016-12-01").toDate()]
           },
         },
-        // Groups data based on year
         group: ['year'],
       });
   
-      res.status(200).json({ data });
+      res.status(200).json({ regionalPrecipitationYearly });
   
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'An error occurred' });
     }
+};
+
+// Controller for the precipitation data (monthly)
+exports.getPrecipitationDataMonthly = async (req, res) => {
+  const locationId = req.params.id;
+
+  try {
+    const location = await Locations.findByPk(locationId);
+    if (!location) {
+      return res.status(404).json({ message: 'Location not found' });
+    }
+    const regionalPrecipitationMonthly = await RegionalAverageMonthlyPrecipitationGermany.findAll({
+      attributes: [
+        [sequelize.fn('AVG', sequelize.col('precipitation_mm')), 'precipitation_mm_avg'],
+        [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
+      ],
+      where: {
+        state: location.location_state,
+        date: {
+          [Op.between]: [moment("2016-01-01").toDate(), moment("2017-01-01").toDate()]
+        },
+      },
+      group: ['month'],
+      order: [['month', 'ASC']],
+    });
+
+    res.status(200).json({ regionalPrecipitationMonthly });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'An error occurred' });
+  }
 };
