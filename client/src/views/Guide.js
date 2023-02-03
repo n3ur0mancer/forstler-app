@@ -44,7 +44,7 @@ function Guide() {
                     </div> 
                     <div className='dashboard_inner_triple_row_container_1'>
                         <LocationModule onSelect={handleSelectLocation} location_id={selectedLocationId}/>
-                        <TreeRecommendationModule location_name={[locationName]}/>
+                        <TreeRecommendationModule location_name={[locationName]} parent_location_id={selectedLocationId}/>
                         <SoilConditionModule parent_location_id={selectedLocationId}/>
                     </div>
                     <div className='dashboard_inner_triple_row_container_2'>

@@ -19,9 +19,6 @@ exports.getSoilData = async (req, res) => {
     const locationLatitude = selectedLocation.location_latitude;
     const locationLongitude = selectedLocation.location_longitude;
 
-    //const soilLatitude = RegionalSoilData.latitude;
-    //const soilLongitude = RegionalSoilData.longitude;
-
     // Find the nearest soil_composition location
     const nearestSoilComposition = await RegionalSoilData.findOne({
         order: sequelize.literal(`

@@ -53,6 +53,10 @@ const Locations = sequelize.define('locations', {
   },
   timestamps: false,
   createdAt: false,
+  location_climate: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
 });
 
 module.exports = { Locations }

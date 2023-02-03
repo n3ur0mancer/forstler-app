@@ -63,11 +63,20 @@ const Trees = sequelize.define('trees', {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
+  tree_preferred_climate: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  createAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  updateAt: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
   timestamps: false,
   createdAt: false,
-  updateddAt: false,
-  createAt: false,
-  updateAt: false
 });
 
 module.exports = { Trees }
