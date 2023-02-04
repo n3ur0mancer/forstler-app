@@ -14,7 +14,7 @@ exports.getTemperatureDataYearly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const iotYearlyTemperature = await IotMeteorologicalData.findAll({
+    const iotTemperature = await IotMeteorologicalData.findAll({
       attributes: [
         // Calculate and assign the average of the crown defoliation value
         [sequelize.fn('AVG', sequelize.col('daily_mean')), 'iot_temperature_avg'],
@@ -34,7 +34,7 @@ exports.getTemperatureDataYearly = async (req, res) => {
       group: ['year'],
     });
 
-    res.status(200).json({ iotYearlyTemperature });
+    res.status(200).json({ iotTemperature });
 
   } catch (error) {
     console.error(error);
@@ -52,7 +52,7 @@ exports.getTemperatureDataMonthly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const iotMonthlyTemperature = await IotMeteorologicalData.findAll({
+    const iotTemperature = await IotMeteorologicalData.findAll({
       attributes: [
         [sequelize.fn('AVG', sequelize.col('daily_mean')), 'iot_temperature_avg'],
         [sequelize.fn('MONTH', sequelize.col('date_observation')), 'month'],
@@ -68,7 +68,7 @@ exports.getTemperatureDataMonthly = async (req, res) => {
       order: [['month', 'ASC']],
     });
 
-    res.status(200).json({ iotMonthlyTemperature });
+    res.status(200).json({ iotTemperature });
 
   } catch (error) {
     console.error(error);
