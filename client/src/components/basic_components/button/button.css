@@ -75,3 +75,42 @@
     margin-bottom: 3vh;
     cursor: pointer;
 }
+
+.weather_graph_button{
+    margin-top: 2vh;
+    margin-right: 2vw;
+    background-color: white;
+    border-color: #355649;
+    border-style: solid;
+    color: #355649;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-family: 'Lexend';
+    font-size: 0.5rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.7vh;
+    cursor: pointer;
+}
+.weather_graph_button:hover{
+    margin-top: 2vh;
+    margin-right: 2vw;
+    background-color: #355649;
+    border-color: #355649;
+    border-style: solid;
+    color: white;
+    padding-top: 0.8vh;
+    padding-bottom: 0.8vh;
+    padding-left: 0.8vw;
+    padding-right: 0.8vw;
+    font-family: 'Lexend';
+    font-size: 0.5rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.7vh;
+    cursor: pointer;
+}

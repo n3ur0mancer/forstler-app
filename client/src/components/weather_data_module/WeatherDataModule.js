@@ -1,11 +1,15 @@
 import WeatherDataGraph from './WeatherDataGraph';
 import climate_icon from './assets/climate-temperature_icon.svg';
+import Button from '../basic_components/button/Button';
 import './css/weather_data_module.css';
 
 function WeatherDataMdule(props) { 
     return (
             <div className='weather_data_module_container'>
-                <h3 className='weather_data_module_title'>Wetterdaten</h3>
+                <div className='title_button_container'>
+                    <h3 className='weather_data_module_title'>Wetterdaten</h3>
+                    <Button button_style="weather_graph_button" button_text="Monatlich"></Button>
+                </div>
                 <div className="weather_info_container">
                         <img src={climate_icon} className="weather_info_icon"></img>
                         <p className="weather_info_text">Gemäßigtes Klima</p>
