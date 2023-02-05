@@ -15,7 +15,7 @@ function WeatherDataMdule(props) {
         regional_datakey: 'temperature_celsius_avg',
         iot_datakey: 'iot_temperature_avg',
         tooltip: ' °C',
-        description: 'Durchschnittstemperatur in Grad Celsius.'
+        description: 'Durchschnittstemperatur in Grad Celsius im Jahr.'
     });
       
     const handleTimeSelect = (event) => {
@@ -45,7 +45,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'temperature_celsius_avg';
             iot_datakey = 'iot_temperature_avg';
             tooltip = ' °C';
-            description= 'Durchschnittstemperatur in Grad Celsius.';
+            description= 'Durchschnittstemperatur in Grad Celsius im Monat.';
         } else if (selectedTextTime === 'Jährlich' && selectedTextType == 'Temperatur'){
             regionalEndpoint = '/dashboard/regional_temperature/';
             iotEndpoint = '/dashboard/iot_temperature/';
@@ -53,7 +53,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'temperature_celsius_avg';
             iot_datakey = 'iot_temperature_avg';
             tooltip = ' °C';
-            description= 'Durchschnittstemperatur in Grad Celsius.';
+            description= 'Durchschnittstemperatur in Grad Celsius im Jahr.';
         } else if (selectedTextTime === 'Jährlich' && selectedTextType == 'Sonnenstunden'){
             regionalEndpoint = '/dashboard/regional_sunhours/';
             iotEndpoint = '/dashboard/iot_sunhours/';
@@ -61,7 +61,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'sunhours_avg';
             iot_datakey = 'iot_sunhours_avg';
             tooltip = ' Stunden';
-            description= 'Durchschnitt an Sonnenstunden.';
+            description= 'Durchschnitt an Sonnenstunden im Jahr.';
         } else if (selectedTextTime === 'Monatlich' && selectedTextType == 'Sonnenstunden'){
             regionalEndpoint = '/dashboard/regional_sunhours_monthly/';
             iotEndpoint = '/dashboard/iot_sunhours_monthly/';
@@ -69,7 +69,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'sunhours_avg';
             iot_datakey = 'iot_sunhours_avg';
             tooltip = ' Stunden';
-            description= 'Durchschnitt an Sonnenstunden.';
+            description= 'Durchschnitt an Sonnenstunden im Monat.';
         } else if (selectedTextTime === 'Jährlich' && selectedTextType == 'Niederschlag'){
             regionalEndpoint = '/dashboard/regional_precipitation/';
             iotEndpoint = '/dashboard/iot_precipitation/';
@@ -77,7 +77,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'precipitation_mm_avg';
             iot_datakey = 'iot_precipitation_avg';
             tooltip = ' mm';
-            description= 'Durchschnitt an Niederschlag in mm.';
+            description= 'Durchschnitt an Niederschlag in mm im Jahr.';
         } else {
             regionalEndpoint = '/dashboard/regional_precipitation_monthly/';
             iotEndpoint = '/dashboard/iot_precipitation_monthly/';
@@ -85,7 +85,7 @@ function WeatherDataMdule(props) {
             regional_datakey = 'precipitation_mm_avg';
             iot_datakey = 'iot_precipitation_avg';
             tooltip = ' mm';
-            description= 'Durchschnitt an Niederschlag in mm.';
+            description= 'Durchschnitt an Niederschlag in mm im Monat.';
         } 
         setSelectedData({ regionalEndpoint, iotEndpoint, xaxis_datakey, regional_datakey, iot_datakey, tooltip, description });
     };
