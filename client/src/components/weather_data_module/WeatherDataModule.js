@@ -92,34 +92,36 @@ function WeatherDataMdule(props) {
   
     return (
         <div className='weather_data_module_container'>
-            <div className='title_button_container'>
+            <div className='title_selection_container'>
                 <h3 className='weather_data_module_title'>Wetterdaten</h3>
-                <Select 
-                value={timeButton} 
-                onChange={handleTimeSelect}
-                size="small"
-                sx={{ marginTop: 1.5, 
-                    marginRight: 1, 
-                    marginLeft: 1,
-                    height: "4vh", 
-                    width: "8vw", 
-                    fontSize:"0.8rem"}}>
-                    <MenuItem value='Jährlich'>Jährlich</MenuItem>
-                    <MenuItem value='Monatlich'>Monatlich</MenuItem>
-                </Select>
-                <Select 
-                value={typeButton} 
-                onChange={handleTypeSelect}
-                size="small"
-                sx={{ marginTop: 1.5, 
-                    marginRight: 2, 
-                    height: "4vh", 
-                    width: "8vw", 
-                    fontSize:"0.8rem"}}>
-                    <MenuItem value='Temperatur'>Temperatur</MenuItem>
-                    <MenuItem value='Sonnenstunden'>Sonnenstunden</MenuItem>
-                    <MenuItem value='Niederschlag'>Niederschlag</MenuItem>
-                </Select>
+                <div className='dropdown-selection-container'>
+                    <Select 
+                    value={timeButton} 
+                    onChange={handleTimeSelect}
+                    size="small"
+                    sx={{ marginTop: 1.5, 
+                        marginRight: 1, 
+                        marginLeft: 1,
+                        height: "4vh", 
+                        width: "7vw", 
+                        fontSize:"0.6rem"}}>
+                        <MenuItem value='Jährlich'>Jährlich</MenuItem>
+                        <MenuItem value='Monatlich'>Monatlich</MenuItem>
+                    </Select>
+                    <Select 
+                    value={typeButton} 
+                    onChange={handleTypeSelect}
+                    size="small"
+                    sx={{ marginTop: 1.5, 
+                        marginRight: 2, 
+                        height: "4vh", 
+                        width: "7vw", 
+                        fontSize:"0.6rem"}}>
+                        <MenuItem value='Temperatur'>Temperatur</MenuItem>
+                        <MenuItem value='Sonnenstunden'>Sonnenstunden</MenuItem>
+                        <MenuItem value='Niederschlag'>Niederschlag</MenuItem>
+                    </Select>
+                </div>
             </div>
             <div className="weather_info_container">
                 <img src={climate_icon} className="weather_info_icon"></img>

@@ -6,11 +6,15 @@
     border-radius: 2vh;
     width: 30vw;
 }
-.title_button_container{
+.title_selection_container{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.dropdown-selection-container{
+    display: flex;
+    flex-direction: row;
 }
 .weather_data_module_title{
     font-family: 'Lexend';
