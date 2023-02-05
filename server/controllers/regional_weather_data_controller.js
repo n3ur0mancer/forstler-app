@@ -16,7 +16,7 @@ exports.getTemperatureDataYearly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const regionalTemperature = await RegionalAverageMonthlyTemperatureGermany.findAll({
+    const regional = await RegionalAverageMonthlyTemperatureGermany.findAll({
       attributes: [
         // Calculate and assign the average of the temperature values
         [sequelize.fn('AVG', sequelize.col('temperature_celsius')), 'temperature_celsius_avg'],
@@ -35,7 +35,7 @@ exports.getTemperatureDataYearly = async (req, res) => {
       group: ['year'],
     });
 
-    res.status(200).json({ regionalTemperature });
+    res.status(200).json({ regional });
 
   } catch (error) {
     console.error(error);
@@ -52,7 +52,7 @@ exports.getTemperatureDataMonthly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const regionalTemperature = await RegionalAverageMonthlyTemperatureGermany.findAll({
+    const regional = await RegionalAverageMonthlyTemperatureGermany.findAll({
       attributes: [
         [sequelize.fn('AVG', sequelize.col('temperature_celsius')), 'temperature_celsius_avg'],
         [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
@@ -67,7 +67,7 @@ exports.getTemperatureDataMonthly = async (req, res) => {
       order: [['month', 'ASC']],
     });
 
-    res.status(200).json({ regionalTemperature });
+    res.status(200).json({ regional });
 
   } catch (error) {
     console.error(error);
@@ -87,7 +87,7 @@ exports.getSunhoursDataYearly = async (req, res) => {
       if (!location) {
         return res.status(404).json({ message: 'Location not found' });
       }
-      const regionalSunhoursYearly = await RegionalAverageMonthlySunhoursGermany.findAll({
+      const regional = await RegionalAverageMonthlySunhoursGermany.findAll({
         attributes: [
           [sequelize.fn('AVG', sequelize.col('sunhours')), 'sunhours_avg'],
           [sequelize.fn('YEAR', sequelize.col('date')), 'year'],
@@ -101,7 +101,7 @@ exports.getSunhoursDataYearly = async (req, res) => {
         group: ['year'],
       });
   
-      res.status(200).json({ regionalSunhoursYearly });
+      res.status(200).json({ regional });
   
     } catch (error) {
       console.error(error);
@@ -118,7 +118,7 @@ exports.getSunhoursDataMonthly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const regionalSunhoursMonthly = await RegionalAverageMonthlySunhoursGermany.findAll({
+    const regional = await RegionalAverageMonthlySunhoursGermany.findAll({
       attributes: [
         [sequelize.fn('AVG', sequelize.col('sunhours')), 'sunhours_avg'],
         [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
@@ -133,7 +133,7 @@ exports.getSunhoursDataMonthly = async (req, res) => {
       order: [['month', 'ASC']],
     });
 
-    res.status(200).json({ regionalSunhoursMonthly });
+    res.status(200).json({ regional });
 
   } catch (error) {
     console.error(error);
@@ -187,7 +187,7 @@ exports.getPrecipitationDataYearly = async (req, res) => {
       if (!location) {
         return res.status(404).json({ message: 'Location not found' });
       }
-      const regionalPrecipitationYearly = await RegionalAverageMonthlyPrecipitationGermany.findAll({
+      const regional = await RegionalAverageMonthlyPrecipitationGermany.findAll({
         attributes: [
           [sequelize.fn('AVG', sequelize.col('precipitation_mm')), 'precipitation_mm_avg'],
           [sequelize.fn('YEAR', sequelize.col('date')), 'year'],
@@ -201,7 +201,7 @@ exports.getPrecipitationDataYearly = async (req, res) => {
         group: ['year'],
       });
   
-      res.status(200).json({ regionalPrecipitationYearly });
+      res.status(200).json({ regional });
   
     } catch (error) {
       console.error(error);
@@ -218,7 +218,7 @@ exports.getPrecipitationDataMonthly = async (req, res) => {
     if (!location) {
       return res.status(404).json({ message: 'Location not found' });
     }
-    const regionalPrecipitationMonthly = await RegionalAverageMonthlyPrecipitationGermany.findAll({
+    const regional = await RegionalAverageMonthlyPrecipitationGermany.findAll({
       attributes: [
         [sequelize.fn('AVG', sequelize.col('precipitation_mm')), 'precipitation_mm_avg'],
         [sequelize.fn('MONTH', sequelize.col('date')), 'month'],
@@ -233,7 +233,7 @@ exports.getPrecipitationDataMonthly = async (req, res) => {
       order: [['month', 'ASC']],
     });
 
-    res.status(200).json({ regionalPrecipitationMonthly });
+    res.status(200).json({ regional });
 
   } catch (error) {
     console.error(error);

@@ -9,7 +9,6 @@ function WeatherDataGraph(props) {
     const location_id = props.location_id;
     const regionalEndpoint = props.regional_endpoint;
     const iotEndpoint = props.iot_endpoint;
-    const datakey = props.datakey;
 
     const [regionalData, setRegionalData] = useState([]);
     const [iotData, setIotData] = useState([]);
@@ -18,7 +17,7 @@ function WeatherDataGraph(props) {
       fetch(`${SERVER_URL}${regionalEndpoint}${location_id}`)
           .then(res => res.json())
           .then(res => {
-            setRegionalData(res.regionalTemperature);
+            setRegionalData(res.regional);
           })
           .catch(error => {
               console.error(error);
@@ -27,12 +26,15 @@ function WeatherDataGraph(props) {
       fetch(`${SERVER_URL}${iotEndpoint}${location_id}`)
           .then(res => res.json())
           .then(res => {
-            setIotData(res.iotTemperature);
+            setIotData(res.iot);
           })
           .catch(error => {
               console.error(error);
       });
-    }, [props.location_id, props.endpoint, props.datakey]);
+    }, [props.location_id, props.regional_endpoint, props.iot_endpoint, props.datakey]);
+
+    console.log(props.location_id, props.regional_endpoint, props.iot_endpoint, props.datakey);
+    console.log(regionalData);
 
     return (
     <ResponsiveContainer width="100%" height="100%">
@@ -45,10 +47,10 @@ function WeatherDataGraph(props) {
             }}
             className="weather_data_graph_text">
             <Legend verticalAlign="top" align="left"/>
-            <Tooltip formatter={(value) => Math.round(value * 10) / 10 + " °C"} />
-            <XAxis dataKey={datakey} stroke='#929292' strokeWidth="1.5" allowDuplicatedCategory={false}/>
-            <Line name="Regional" data={regionalData} dataKey="temperature_celsius_avg" type="monotone" stroke="#14221D" strokeWidth={2} activeDot={{ r: 6 }} />
-            <Line name="IoT" data={iotData} dataKey="iot_temperature_avg" type="monotone" stroke="#B2D4C8" strokeWidth={2} activeDot={{ r: 6 }}/>
+            <Tooltip formatter={(value) => Math.round(value * 10) / 10 + props.tooltip} />
+            <XAxis dataKey={props.xaxis_datakey} stroke='#929292' strokeWidth="1.5" allowDuplicatedCategory={false}/>
+            <Line name="Regional" data={regionalData} dataKey={props.regional_datakey}  type="monotone" stroke="#14221D" strokeWidth={2} activeDot={{ r: 6 }} />
+            <Line name="IoT" data={iotData} dataKey={props.iot_datakey}  type="monotone" stroke="#B2D4C8" strokeWidth={2} activeDot={{ r: 6 }}/>
         </LineChart>
     </ResponsiveContainer>
     );

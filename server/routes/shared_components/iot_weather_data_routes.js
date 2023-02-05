@@ -20,4 +20,10 @@ router.get('/iot_precipitation/:id', iotDataController.getPrecipitationDataYearl
 // Route to fetch the IoT precipitation data by the id of its location (yearly)
 router.get('/iot_precipitation_monthly/:id', iotDataController.getPrecipitationDataMonthly);
 
+// Route to fetch the IoT precipitation data by the id of its location (yearly)
+router.get('/iot_sunhours/:id', iotDataController.getSunhoursDataYearly);
+
+// Route to fetch the IoT precipitation data by the id of its location (yearly)
+router.get('/iot_sunhours_monthly/:id', iotDataController.getSunhoursDataMonthly);
+
 module.exports = router;
