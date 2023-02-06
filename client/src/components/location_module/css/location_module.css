@@ -1,19 +1,19 @@
-.location_module_layout{
-    border-radius: 2vh;
-    background-color: white;
-    width: 20vw;
-    height: 40vh;
-    overflow-y: scroll;
+.location_module_layout {
+  border-radius: 2vh;
+  background-color: white;
+  width: 20vw;
+  height: 40vh;
+  overflow-y: scroll;
 }
 
-.location_module_title{
-    font-family: 'Lexend';
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #14221D;
-    background-color: white;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    margin-top: 2vh;
-    margin-bottom: 1vh;
+.location_module_title {
+  font-family: "Lexend";
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #14221d;
+  background-color: white;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
 }

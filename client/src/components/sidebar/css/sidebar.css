@@ -1,31 +1,31 @@
-.sidebar_layout{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background: white;
-    padding-right: 2vw;
+.sidebar_layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: white;
+  padding-right: 2vw;
 }
-.sidebar_logo_container{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    text-decoration: none;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    margin-left: 2vw;
-    margin-right: 1vw;
+.sidebar_logo_container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  margin-left: 2vw;
+  margin-right: 1vw;
 }
-.sidebar_logo_icon{
-    height: 7vh;    
-    background: white;
+.sidebar_logo_icon {
+  height: 7vh;
+  background: white;
 }
-.sidebar_logo_text{
-    color: #14221D;
-    margin-left: 1vw;
-    font-family: 'Lexend';
-    font-size: 1.2rem;
-    font-weight: 800;
+.sidebar_logo_text {
+  color: #14221d;
+  margin-left: 1vw;
+  font-family: "Lexend";
+  font-size: 1.2rem;
+  font-weight: 800;
 }
-.link{
-    text-decoration: none;
+.link {
+  text-decoration: none;
 }

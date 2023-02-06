@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
+const Sequelize = require("sequelize");
+const sequelize = require("../config/db");
 
-const CrownConditions = sequelize.define('crown_conditions', {
+const CrownConditions = sequelize.define("crown_conditions", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -11,8 +11,8 @@ const CrownConditions = sequelize.define('crown_conditions', {
     type: Sequelize.STRING,
     allowNull: false,
     references: {
-      model: 'locations',
-      key: 'location_code',
+      model: "locations",
+      key: "location_code",
     },
   },
   tree_id: {
@@ -39,4 +39,4 @@ const CrownConditions = sequelize.define('crown_conditions', {
   createdAt: false,
 });
 
-module.exports = { CrownConditions }
+module.exports = { CrownConditions };

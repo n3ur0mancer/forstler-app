@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
+const Sequelize = require("sequelize");
+const sequelize = require("../config/db");
 
-const Locations = sequelize.define('locations', {
+const Locations = sequelize.define("locations", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -59,4 +59,4 @@ const Locations = sequelize.define('locations', {
   },
 });
 
-module.exports = { Locations }
+module.exports = { Locations };

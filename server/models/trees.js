@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
+const Sequelize = require("sequelize");
+const sequelize = require("../config/db");
 
-const Trees = sequelize.define('trees', {
+const Trees = sequelize.define("trees", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -79,4 +79,4 @@ const Trees = sequelize.define('trees', {
   createdAt: false,
 });
 
-module.exports = { Trees }
+module.exports = { Trees };

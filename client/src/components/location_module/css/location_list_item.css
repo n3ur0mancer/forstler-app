@@ -1,55 +1,54 @@
-.location_list_item_container{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lexend';
-    background: white;
-    border-radius: 2vh;
-    margin-right: 2vw;
-    margin-left: 2vw;
+.location_list_item_container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lexend";
+  background: white;
+  border-radius: 2vh;
+  margin-right: 2vw;
+  margin-left: 2vw;
 }
-.location_list_item_container:hover{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lexend';
-    border-radius: 1vh;
-    border-color: #B2D4C8;
-    border-style: solid;
-    cursor: pointer;
-    margin-right: 1vw;
-    margin-left: 1vw;
-    padding-right: 1vw;
-    padding-left: 1vw;
+.location_list_item_container:hover {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lexend";
+  border-radius: 1vh;
+  border-color: #b2d4c8;
+  border-style: solid;
+  cursor: pointer;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
-.location_list_item_container_selected{
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lexend';
-    border-radius: 1vh;
-    border-color: #B2D4C8;
-    border-style: solid;
-    cursor: pointer;
-    margin-right: 1vw;
-    margin-left: 1vw;
-    padding-right: 1vw;
-    padding-left: 1vw;
-}
-
-
-.location_list_item_child{
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    background: white;
+.location_list_item_container_selected {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lexend";
+  border-radius: 1vh;
+  border-color: #b2d4c8;
+  border-style: solid;
+  cursor: pointer;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  padding-right: 1vw;
+  padding-left: 1vw;
 }
 
-.location_name{
-    font-weight: 800;
-    font-size: 0.9rem;
-    color: #14221D;
-    background: white;
+.location_list_item_child {
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  background: white;
 }
-.location_place{
-    font-weight: 200;
-    font-size: 0.8rem;
-    color: #8E8E8E;
-    background: white;
+
+.location_name {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #14221d;
+  background: white;
+}
+.location_place {
+  font-weight: 200;
+  font-size: 0.8rem;
+  color: #8e8e8e;
+  background: white;
 }

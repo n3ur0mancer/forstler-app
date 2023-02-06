@@ -1,47 +1,47 @@
-.map_overlay_container{
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 1vh;
-    font-family: 'Lexend';
-    color: #5E5E5E;
-    margin-right: 1vw;
-    margin-top: 2vh;
-    margin-left: 12.5vw;
-    z-index: 10;
-    position: relative;
+.map_overlay_container {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 1vh;
+  font-family: "Lexend";
+  color: #5e5e5e;
+  margin-right: 1vw;
+  margin-top: 2vh;
+  margin-left: 12.5vw;
+  z-index: 10;
+  position: relative;
 }
-.elevation_container{
-    display: flex;
-    flex-direction: row;
-    padding-right: 1vw;
-    padding-top: 1vh;
-    align-items: center;
+.elevation_container {
+  display: flex;
+  flex-direction: row;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  align-items: center;
 }
-.elevation_image{
-    width: 1.5vw;
-    margin-right: 0.7vw;
+.elevation_image {
+  width: 1.5vw;
+  margin-right: 0.7vw;
 }
-.elevation_text{
-    font-size: 0.8rem;
+.elevation_text {
+  font-size: 0.8rem;
 }
-.elevation_text:hover{
-    content: " Additional info";
+.elevation_text:hover {
+  content: " Additional info";
 }
 
-.sun_hours_container{
-    display: flex;
-    flex-direction: row;
-    padding-right: 1vw;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
-    align-items: center;
+.sun_hours_container {
+  display: flex;
+  flex-direction: row;
+  padding-right: 1vw;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  align-items: center;
 }
-.sun_hours_image{
-    width: 1.5vw;
-    margin-right: 0.7vw;
+.sun_hours_image {
+  width: 1.5vw;
+  margin-right: 0.7vw;
 }
-.sun_hours_text{
-    font-size: 0.8rem;
+.sun_hours_text {
+  font-size: 0.8rem;
 }

@@ -1,7 +1,7 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../config/db');
+const Sequelize = require("sequelize");
+const sequelize = require("../config/db");
 
-const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
+const IotMeteorologicalData = sequelize.define("iot_meteorological_data", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -11,8 +11,8 @@ const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
     type: Sequelize.STRING,
     allowNull: false,
     references: {
-      model: 'locations',
-      key: 'location_code',
+      model: "locations",
+      key: "location_code",
     },
   },
   measurement_type: {
@@ -47,4 +47,4 @@ const IotMeteorologicalData = sequelize.define('iot_meteorological_data', {
   createdAt: false,
 });
 
-module.exports = { IotMeteorologicalData }
+module.exports = { IotMeteorologicalData };

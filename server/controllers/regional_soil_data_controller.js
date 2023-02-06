@@ -1,7 +1,7 @@
-const sequelize = require('sequelize');
+const sequelize = require("sequelize");
 
-const { Locations } = require('../models/locations'); 
-const { RegionalSoilData } = require('../models/regional_soil_data'); 
+const { Locations } = require("../models/locations");
+const { RegionalSoilData } = require("../models/regional_soil_data");
 
 exports.getSoilData = async (req, res) => {
   try {
@@ -11,8 +11,8 @@ exports.getSoilData = async (req, res) => {
     // Find the selected location
     const selectedLocation = await Locations.findOne({
       where: {
-        id: locationId
-      }
+        id: locationId,
+      },
     });
 
     // Get the location's coordinates
@@ -21,12 +21,12 @@ exports.getSoilData = async (req, res) => {
 
     // Find the nearest soil_composition location
     const nearestSoilComposition = await RegionalSoilData.findOne({
-        order: sequelize.literal(`
+      order: sequelize.literal(`
           ST_Distance_Sphere(
             POINT(${locationLongitude}, ${locationLatitude}),
             POINT(longitude, latitude)
           )
-        `)
+        `),
     });
 
     // Get the silt_content, sand_content and clay_content of the nearest soil_composition location
@@ -51,21 +51,20 @@ exports.getSoilData = async (req, res) => {
         return "Lehmig, sandiger Boden";
       }
     })();
-    
 
     // Return the result
     res.status(200).json({
       data: [
         {
-          "clay": clayContent,
-          "sand": sandContent,
-          "silt": siltContent,
-          "soil_composition": soilComposition
-        }
-      ]
+          clay: clayContent,
+          sand: sandContent,
+          silt: siltContent,
+          soil_composition: soilComposition,
+        },
+      ],
     });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 };

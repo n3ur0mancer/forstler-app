@@ -1,51 +1,50 @@
-.weather_data_module_container{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    margin-left: 2vw;
-    border-radius: 2vh;
-    width: 30vw;
+.weather_data_module_container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 2vw;
+  border-radius: 2vh;
+  width: 30vw;
 }
-.title_selection_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+.title_selection_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
-.dropdown-selection-container{
-    display: flex;
-    flex-direction: row;
+.dropdown-selection-container {
+  display: flex;
+  flex-direction: row;
 }
-.weather_data_module_title{
-    font-family: 'Lexend';
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #14221D;
-    margin-top: 2vh;
-    margin-bottom: 0.5vh;
-    margin-left: 2vw;
+.weather_data_module_title {
+  font-family: "Lexend";
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #14221d;
+  margin-top: 2vh;
+  margin-bottom: 0.5vh;
+  margin-left: 2vw;
 }
-.weather_info_container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2vw;
+.weather_info_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 2vw;
 }
-.weather_info_icon{
-    height: 2.5vh;
-    margin-right: 0.5vw;
+.weather_info_icon {
+  height: 2.5vh;
+  margin-right: 0.5vw;
 }
-.weather_info_text{
-    font-family: "Lexend";
-    font-size: 0.7rem;
-    color: #5E5E5E;
+.weather_info_text {
+  font-family: "Lexend";
+  font-size: 0.7rem;
+  color: #5e5e5e;
 }
-.weather_data_module_description{
-    font-family: 'Lexend';
-    font-size: 0.7rem;
-    color: #8E8E8E;
-    margin-bottom: 2vh;
-    margin-left: 2vw;
-    margin-right: 2vw;
+.weather_data_module_description {
+  font-family: "Lexend";
+  font-size: 0.7rem;
+  color: #8e8e8e;
+  margin-bottom: 2vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
-

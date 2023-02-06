@@ -1,31 +1,30 @@
-.sidebar_list_item{
-    display: flex;
-    align-items: center;
-    border-radius: 1vh;
-    background: white;
-    color: #14221D;
-    padding: 4%;
-    margin-left: 2.5vw;
-    margin-bottom: 2vh;
+.sidebar_list_item {
+  display: flex;
+  align-items: center;
+  border-radius: 1vh;
+  background: white;
+  color: #14221d;
+  padding: 4%;
+  margin-left: 2.5vw;
+  margin-bottom: 2vh;
 }
-.sidebar_list_item_selected{
-    display: flex;
-    align-items: center;
-    border-radius: 1vh;
-    background: #355649;
-    color: white;
-    padding: 4%;
-    margin-left: 2.5vw;
-    margin-bottom: 2vh;
-}
-
-.simple_list_icon{
-    height: 3.5vh;
-}
-.simple_list_item_text{
-    font-family: 'Lexend';
-    font-size: 0.9rem;
-    margin-left: 1.5vw;
-    font-weight: 400;
+.sidebar_list_item_selected {
+  display: flex;
+  align-items: center;
+  border-radius: 1vh;
+  background: #355649;
+  color: white;
+  padding: 4%;
+  margin-left: 2.5vw;
+  margin-bottom: 2vh;
 }
 
+.simple_list_icon {
+  height: 3.5vh;
+}
+.simple_list_item_text {
+  font-family: "Lexend";
+  font-size: 0.9rem;
+  margin-left: 1.5vw;
+  font-weight: 400;
+}
