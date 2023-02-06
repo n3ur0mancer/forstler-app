@@ -33,29 +33,29 @@ const Locations = sequelize.define("locations", {
   },
   iot_latitude: {
     type: Sequelize.DECIMAL(13, 10),
-    allowNull: false,
+    allowNull: true,
   },
   iot_longitude: {
     type: Sequelize.DECIMAL(13, 10),
-    allowNull: false,
+    allowNull: true,
   },
   map_fencing: {
     type: Sequelize.JSON,
-    allowNull: false,
+    allowNull: true,
   },
   createAt: {
     type: Sequelize.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   updateAt: {
     type: Sequelize.DATE,
-    allowNull: false,
+    allowNull: true,
   },
-  timestamps: false,
-  createdAt: false,
+  timestamps: true,
+  createdAt: true,
   location_climate: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
 });
 
