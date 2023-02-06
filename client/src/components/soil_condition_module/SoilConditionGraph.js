@@ -7,7 +7,6 @@ const SERVER_URL = 'http://localhost:3001';
 function SoilConditionGraph(props) {
 
     const location_id = props.location_id;
-
     const [soilData, setSoilData] = useState([]);
 
     useEffect(() => {

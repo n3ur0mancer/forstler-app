@@ -27,12 +27,31 @@ exports.getSoilData = async (req, res) => {
             POINT(longitude, latitude)
           )
         `)
-      });
+    });
 
     // Get the silt_content, sand_content and clay_content of the nearest soil_composition location
     const siltContent = nearestSoilComposition.silt_content;
     const sandContent = nearestSoilComposition.sand_content;
     const clayContent = nearestSoilComposition.clay_content;
+
+    const soilComposition = (() => {
+      if (siltContent >= sandContent && sandContent > clayContent) {
+        return "Schlickig, sandiger Boden";
+      } else if (siltContent >= clayContent && clayContent > sandContent) {
+        return "Schlickig, lehmiger Boden";
+      } else if (sandContent >= siltContent && siltContent > clayContent) {
+        return "Sandig, schlickiger Boden";
+      } else if (sandContent >= clayContent && clayContent > siltContent) {
+        return "Sandig, lehmiger Boden";
+      } else if (clayContent >= siltContent && siltContent > sandContent) {
+        return "Lehmig, schlickiger Boden";
+      } else if (siltContent >= clayContent && clayContent >= sandContent) {
+        return "Schlickig, sandiger Boden";
+      } else {
+        return "Lehmig, sandiger Boden";
+      }
+    })();
+    
 
     // Return the result
     res.status(200).json({
@@ -40,7 +59,8 @@ exports.getSoilData = async (req, res) => {
         {
           "clay": clayContent,
           "sand": sandContent,
-          "silt": siltContent
+          "silt": siltContent,
+          "soil_composition": soilComposition
         }
       ]
     });
