@@ -5,7 +5,8 @@ import TreeRecommendationModule from '../components/tree_recommendation_module/T
 import SoilConditionModule from '../components/soil_condition_module/SoilConditionModule';
 import MapModule from '../components/map_module/MapModule';
 import WeatherDataMdule from '../components/weather_data_module/WeatherDataModule';
-import NewTreesModule from '../components/new_trees_module/NewTreesModule';
+//import NewTreesModule from '../components/new_trees_module/NewTreesModule';
+import NewLoctionModule from '../components/new_location_module/NewLocationModule';
 import './css/dashboard.css';
 
 function Guide() {
@@ -55,7 +56,7 @@ function Guide() {
                             />
                         </div>
                         <WeatherDataMdule parent_location_id={selectedLocationId}/>
-                        <NewTreesModule />
+                        <NewLoctionModule />
                     </div>
                 </div>
             </div>

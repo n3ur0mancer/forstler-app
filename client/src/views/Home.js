@@ -1,8 +1,6 @@
 import {Link} from 'react-router-dom';
-
 import Header from '../components/header/Header';
 import Button from '../components/basic_components/button/Button';
-
 import terrain_image from '../images/terrain_image.jpg';
 import soil_image from '../images/soil_image.jpg';
 import forest_image from '../images/forest_image_1.jpg';

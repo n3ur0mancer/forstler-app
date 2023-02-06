@@ -3,7 +3,6 @@
     flex-direction: row;
     margin-bottom: 0.5vh;
     margin-left: 2vw;
- 
     font-family: 'Lexend';
     font-size: 0.8rem;
     color: #2A443A;
@@ -16,4 +15,9 @@
 
 .input_field{
     width: 8vw;
+}
+
+.coordinates_container{
+    display: flex;
+    flex-direction: row;
 }
