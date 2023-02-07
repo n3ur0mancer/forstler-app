@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Button from "../basic_components/button/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
@@ -10,12 +9,47 @@ import Typography from "@mui/material/Typography";
 
 import "./css/new_location_module.css";
 
+const SERVER_URL = "http://localhost:3001";
+
 function NewLoctionModule() {
   const [stateSelection, setStateSelection] = useState("berlin");
+  const [locationName, setLocationName] = useState("");
+  const [locationLatitude, setLocationLatitude] = useState("");
+  const [locationLongitude, setLocationLongitude] = useState("");
+  const [useCoordinates, setUseCoordinates] = useState(false);
 
   const handleSelect = (event) => {
-    const stateSelection = event.target.value;
-    setStateSelection(stateSelection);
+    setStateSelection(event.target.value);
+  };
+
+  const handleCheckboxChange = (event) => {
+    setUseCoordinates(event.target.checked);
+  };
+
+  const handleButtonClick = async () => {
+    const data = {
+      locationName: locationName,
+      stateSelection: stateSelection,
+      locationLatitude: locationLatitude,
+      locationLongitude: locationLongitude,
+    };
+    if (useCoordinates) {
+      data.iotLatitude = locationLatitude;
+      data.iotLongitude = locationLongitude;
+    }
+    try {
+      const response = await fetch(`${SERVER_URL}/dashboard/new_location`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -41,6 +75,8 @@ function NewLoctionModule() {
             sx={{
               width: "18vw",
             }}
+            value={locationName}
+            onChange={(event) => setLocationName(event.target.value)}
           />
           <div className="coordinates_container">
             <TextField
@@ -61,6 +97,8 @@ function NewLoctionModule() {
               sx={{
                 width: "8.5vw",
               }}
+              value={locationLatitude}
+              onChange={(event) => setLocationLatitude(event.target.value)}
             />
             <TextField
               id="longitude"
@@ -81,6 +119,8 @@ function NewLoctionModule() {
                 marginLeft: 1,
                 width: "8.5vw",
               }}
+              value={locationLongitude}
+              onChange={(event) => setLocationLongitude(event.target.value)}
             />
           </div>
           <div className="selection-container">
@@ -118,7 +158,12 @@ function NewLoctionModule() {
               <MenuItem value="thueringen">Thüringen</MenuItem>
             </Select>
             <FormControlLabel
-              control={<Checkbox />}
+              control={
+                <Checkbox
+                  checked={useCoordinates}
+                  onChange={handleCheckboxChange}
+                />
+              }
               label={
                 <Typography
                   style={{
@@ -137,10 +182,12 @@ function NewLoctionModule() {
             />
           </div>
         </Box>
-        <Button
-          button_text="Bestätigen"
-          button_style="green_button_new_location"
-        />
+        <button
+          className="green_button_new_location"
+          onClick={handleButtonClick}
+        >
+          Bestätigen
+        </button>
       </div>
     </div>
   );

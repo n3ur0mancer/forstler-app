@@ -9,7 +9,7 @@ const Locations = sequelize.define("locations", {
   },
   location_code: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   location_name: {
     type: Sequelize.STRING,

@@ -13,7 +13,7 @@ function LocationModule(props) {
       .then((res) => res.json())
       .then((data) => setLocations(data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [locations]);
 
   return (
     <div className="location_module_layout">

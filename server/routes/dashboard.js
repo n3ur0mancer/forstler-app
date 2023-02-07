@@ -8,7 +8,7 @@ const crownCondition = require("./dashboard_specific/crown_condition_route");
 const regionalWeatherData = require("./shared_components/regional_weather_data_routes");
 const iotTemperatureData = require("./shared_components/iot_weather_data_routes");
 const soilCondition = require("./shared_components/soil_condition_route");
-const newLocation = require("./dashboard_specific/new_location_route");
+const newLocation = require("./shared_components/new_location_route");
 
 router.use("/", viewLocationName);
 router.use("/", locationsList);
