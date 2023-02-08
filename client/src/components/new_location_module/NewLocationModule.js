@@ -11,7 +11,7 @@ import "./css/new_location_module.css";
 
 const SERVER_URL = "http://localhost:3001";
 
-function NewLoctionModule() {
+function NewLoctionModule(props) {
   const [stateSelection, setStateSelection] = useState("berlin");
   const [locationName, setLocationName] = useState("");
   const [locationLatitude, setLocationLatitude] = useState("");
@@ -24,6 +24,10 @@ function NewLoctionModule() {
 
   const handleCheckboxChange = (event) => {
     setUseCoordinates(event.target.checked);
+  };
+
+  const handleFetchClick = () => {
+    props.setFetchNewLocations(true);
   };
 
   const handleButtonClick = async () => {
@@ -189,7 +193,10 @@ function NewLoctionModule() {
         </Box>
         <button
           className="green_button_new_location"
-          onClick={handleButtonClick}
+          onClick={() => {
+            handleButtonClick();
+            handleFetchClick();
+          }}
         >
           Bestätigen
         </button>

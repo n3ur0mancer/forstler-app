@@ -14,6 +14,14 @@ function LocationModule(props) {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    if (props.fetchNewLocations) {
+      fetch(`${SERVER_URL}/dashboard/locations_list/all`)
+        .then((res) => res.json())
+        .then((data) => setLocations(data))
+        .catch((err) => console.log(err));
+    }
+  }, [props.fetchNewLocations]);
   return (
     <div className="location_module_layout">
       <h3 className="location_module_title">Standorte</h3>
