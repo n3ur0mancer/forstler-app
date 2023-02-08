@@ -6,7 +6,7 @@ Repository for the app part of Forstler. Please keep in mind that this is a work
 
 This repository is the single page application part of Forstler. Forstler is an app to monitor and visualize forest health. It uses regional data from third party providers and compares it with the local data which is being gathered by the Forstler IoT module.
 
-The repository for this module can be found here: https://github.com/n3ur0mancer/forstler-iot
+The IoT part can be found in the [forstler-iot ](https://github.com/n3ur0mancer/forstler-iot) repository.
 
 The Forstler app also tries to provide recommendations for tree species, which can be suitable for the selected location, based on the climate, lighting and soil conditions.
 
