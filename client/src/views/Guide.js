@@ -17,7 +17,13 @@ function Guide() {
     require("../components/sidebar/assets/ring_black.svg").default;
   const ring_white =
     require("../components/sidebar/assets/ring_white.svg").default;
+
   const [selectedLocationId, setSelectedLocationId] = useState(100003);
+  const [fetchNewLocations, setFetchNewLocations] = useState(false);
+
+  const handleSelectLocation = (id) => {
+    setSelectedLocationId(id);
+  };
 
   useEffect(() => {
     fetch(`${SERVER_URL}/dashboard/location_name/${selectedLocationId}`)
@@ -29,10 +35,6 @@ function Guide() {
         setLocationCountry(locationCountry);
       });
   }, [selectedLocationId]);
-
-  const handleSelectLocation = (id) => {
-    setSelectedLocationId(id);
-  };
 
   return (
     <div className="dashboard_outer_double_row_container">
@@ -65,7 +67,7 @@ function Guide() {
             <MapModule location_id={selectedLocationId} elevation="50" />
           </div>
           <WeatherDataMdule parent_location_id={selectedLocationId} />
-          <NewLoctionModule />
+          <NewLoctionModule setFetchNewLocations={setFetchNewLocations} />
         </div>
       </div>
     </div>
