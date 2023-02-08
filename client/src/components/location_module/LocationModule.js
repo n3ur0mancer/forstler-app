@@ -1,6 +1,5 @@
 import React, { useState, useEffect, onSelect } from "react";
 import LocationListItem from "./LocationListItem";
-//import LocationSearch from './LocationSearch';
 import "./css/location_module.css";
 
 const SERVER_URL = "http://localhost:3001";
@@ -13,7 +12,7 @@ function LocationModule(props) {
       .then((res) => res.json())
       .then((data) => setLocations(data))
       .catch((err) => console.log(err));
-  }, [locations]);
+  }, []);
 
   return (
     <div className="location_module_layout">

@@ -50,6 +50,11 @@ function NewLoctionModule() {
     } catch (error) {
       console.error(error);
     }
+    setLocationName("");
+    setLocationLatitude("");
+    setLocationLongitude("");
+    setUseCoordinates(false);
+    setStateSelection("berlin");
   };
 
   return (
@@ -150,7 +155,7 @@ function NewLoctionModule() {
               <MenuItem value="nordrhein_westfalen">
                 Nordrhein-Westfalen
               </MenuItem>
-              <MenuItem value="rheinland_pfalz">Rehinland-Pfalz</MenuItem>
+              <MenuItem value="rheinland_pfalz">Rheinland-Pfalz</MenuItem>
               <MenuItem value="schleswig_holstein">Schleswig-Holstein</MenuItem>
               <MenuItem value="saarland">Saarland</MenuItem>
               <MenuItem value="sachsen">Sachsen</MenuItem>
