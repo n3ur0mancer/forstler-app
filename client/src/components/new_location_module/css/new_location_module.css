@@ -50,3 +50,21 @@
   cursor: pointer;
   margin-bottom: 2vh;
 }
+.green_button_new_location:active {
+  background-color: #b2d4c8;
+  color: white;
+  border: none;
+  width: 7vw;
+  padding-top: 0.8vh;
+  padding-bottom: 0.8vh;
+  padding-left: 0.8vw;
+  padding-right: 0.8vw;
+  font-family: "Lexend";
+  font-size: 0.7rem;
+  font-weight: 100;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.7vh;
+  cursor: pointer;
+  margin-bottom: 2vh;
+}
