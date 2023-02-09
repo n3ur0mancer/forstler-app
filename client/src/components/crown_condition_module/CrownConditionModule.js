@@ -16,7 +16,7 @@ function CrownConditionModule(props) {
         location_id={parent_location_id}
       />
       <p className="crown_condition_module_description">
-        Die Transparenz der Baumkronen in Prozent.
+        Die Transparenz bzw. Entlaubung der Baumkronen in Prozent.
       </p>
     </div>
   );
