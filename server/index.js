@@ -4,6 +4,7 @@ app.use(express.json());
 const dashboardRoutes = require("./routes/dashboard");
 const guideRoutes = require("./routes/guide");
 
+// Define CORS options localohost:3000
 app.options("*", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header("Access-Control-Allow-Methods", "GET, POST, UPDATE, DELETE");

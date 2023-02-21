@@ -1,5 +1,6 @@
 import "./css/location_list_item.css";
 
+// Callback function is called when the location_list_item_container is being clicked
 function LocationListItem(props) {
   return (
     <div className="location_list_item_container" onClick={props.onClick}>

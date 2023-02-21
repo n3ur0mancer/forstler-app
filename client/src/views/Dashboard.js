@@ -8,22 +8,25 @@ import WeatherDataMdule from "../components/weather_data_module/WeatherDataModul
 import NewLoctionModule from "../components/new_location_module/NewLocationModule";
 import "./css/dashboard.css";
 
+const SERVER_URL = "http://localhost:3001";
+const ring_black =
+  require("../components/sidebar/assets/ring_black.svg").default;
+const ring_white =
+  require("../components/sidebar/assets/ring_white.svg").default;
+
 function Dashboard() {
-  const SERVER_URL = "http://localhost:3001";
+  // Initializing the states
   const [locationName, setLocaitonName] = useState("Name");
   const [locationCountry, setLocationCountry] = useState("Name");
-  const ring_black =
-    require("../components/sidebar/assets/ring_black.svg").default;
-  const ring_white =
-    require("../components/sidebar/assets/ring_white.svg").default;
-
   const [selectedLocationId, setSelectedLocationId] = useState(100003);
   const [fetchNewLocations, setFetchNewLocations] = useState(false);
 
+  // Function to update the state of selectedLocationId when a location is selected
   const handleSelectLocation = (id) => {
     setSelectedLocationId(id);
   };
 
+  // Fetch the name & country code whenever the selectedLocationId changes
   useEffect(() => {
     fetch(`${SERVER_URL}/dashboard/location_name/${selectedLocationId}`)
       .then((res) => res.json())
