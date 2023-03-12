@@ -2,6 +2,8 @@
 
 Repository for the app part of Forstler. Please keep in mind that this is a work in progress.
 
+<img width="1103" alt="frontend" src="https://user-images.githubusercontent.com/46748400/224561100-af71a2f4-61d2-490d-bdb7-cbe4aec883a3.png">
+
 ## What is this project about?
 
 This repository is the single page application part of Forstler. Forstler is an app to monitor and visualize forest health. It uses regional data from third party providers and compares it with the local data which is being gathered by the Forstler IoT module.
